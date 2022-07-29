@@ -1,7 +1,7 @@
 # SIGNUP
 @endpoint = http://localhost:3000
 
-POST {{endpoint}}/sign-up HTTP/1.1
+POST {{endpoint}}/auth/sign-up HTTP/1.1
 content-type: application/json
 
 {
@@ -22,3 +22,42 @@ content-type: application/json
     "email": "udinsedunia2@gmail.com",
     "password": "udinganteng123"
 }
+
+###
+# ADD SUB 1 BAG 1
+POST {{endpoint}}/sub1/bag1
+content-type: application/json
+
+{
+    "lembagaMitra" : "Universitas Malaysia Pahang",
+    "tingkat" : "Internasional",
+    "judulKegiatan": "Programme Summer Class",
+    "manfaat": "Meningkatkan Konten pembelajaran dan meningkatkan sistem pembelajaran dosen",
+    "waktuDanDurasi"  : "1 Bulan",
+    "buktiKerjasama" : "Surat Tugas, undangan, Mou, photo kegiatan",
+    "tahunBerakhir" : 2019
+}
+
+###
+# UPDATE SUB1BAG1
+PUT {{endpoint}}/sub1/bag1/62e3ff05fbcace69b52186a0
+content-type: application/json
+
+{
+    "lembagaMitra" : "Universitas Indonesias",
+    "tingkat" : "Internasional",
+    "judulKegiatan": "Programme Summer Class",
+    "manfaat": "Meningkatkan Konten pembelajaran dan meningkatkan sistem pembelajaran dosen",
+    "waktuDanDurasi"  : "1 Bulan",
+    "buktiKerjasama" : "Surat Tugas, undangan, Mou, photo kegiatan",
+    "tahunBerakhir" : 2019
+}
+
+###
+
+GET {{endpoint}}/sub1/bag1/
+content-type: application/json
+###
+
+DELETE {{endpoint}}/sub1/bag1/62e3fbd84ca1f25f3ebbac4a
+content-type: application/json
