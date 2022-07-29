@@ -1,0 +1,24 @@
+# SIGNUP
+@endpoint = http://localhost:3000
+
+POST {{endpoint}}/sign-up HTTP/1.1
+content-type: application/json
+
+{
+    "username": "udinsedunia",
+    "fullName": "Muhammad Udin",
+    "email": "udinsedunia@gmail.com",
+    "password": "udinganteng123"
+}
+
+###
+
+POST {{endpoint}}/auth/sign-in 
+content-type: application/json
+
+{
+    "username": "udinsedunia",
+    # OR
+    "email": "udinsedunia2@gmail.com",
+    "password": "udinganteng123"
+}
