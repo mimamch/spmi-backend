@@ -6,20 +6,29 @@ import express from "express";
 import * as path from "path";
 // var cookieParser = require("cookie-parser");
 import cookieParser from "cookie-parser";
+import session from "express-session";
+import ConnectMongoDBSession from "connect-mongodb-session";
 // var logger = require("morgan");
 import logger from "morgan";
 // var http = require("http");
 import http from "http";
 import { config } from "dotenv";
+import cors from "cors";
 config();
 
 import mongoose from "mongoose";
-mongoose.connect(process.env.MONGO_URL);
+const connect = mongoose.connect(process.env.MONGO_URL);
 const __dirname = path.resolve();
+const MongoDBStore = ConnectMongoDBSession(session);
+var store = new MongoDBStore({
+  uri: process.env.MONGO_URL,
+  collection: "session",
+});
+store.on("error", function (error) {
+  console.log("store error>>>>", error);
+});
 
 // Routes
-// var indexRouter = require("./app/routes/index");
-// var usersRouter = require("./app/routes/users");
 import indexRouter from "./app/routes/index.js";
 
 export var app = express();
@@ -27,10 +36,23 @@ export var app = express();
 app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "ejs");
 
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(
+  session({
+    store: store,
+    saveUninitialized: true,
+    secret: "iloveyou3000",
+    resave: true,
+    cookie: {
+      secure: "auto",
+      maxAge: 7 * 24 * 60 * 60,
+    },
+  })
+);
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);

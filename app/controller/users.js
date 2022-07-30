@@ -33,8 +33,27 @@ export const signIn = async (req, res) => {
     const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET_KEY, {
       expiresIn: 1000,
     });
-    res.cookie("token", token, { httpOnly: true });
+    res.cookie("token", token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 });
+    req.session.token = token;
     res.json(successWithData({ token }));
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(errorWithMessage(error.message));
+  }
+};
+
+export const Me = async (req, res) => {
+  try {
+    console.log(req.session.token);
+    if (!req.session.token && !req.cookies.token)
+      return res
+        .status(400)
+        .json(errorWithMessage("Silahkan Login Telebih Dauhulu"));
+
+    const token = req.session.token || req.cookies.token;
+    const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+
+    res.json(successWithData(data));
   } catch (error) {
     console.log(error);
     res.status(500).json(errorWithMessage(error.message));
