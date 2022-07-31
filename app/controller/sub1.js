@@ -12,7 +12,7 @@ export const bag1 = {
       }
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   create: async (req, res) => {
@@ -26,12 +26,12 @@ export const bag1 = {
         waktuDanDurasi: req.body.waktuDanDurasi,
         buktiKerjasama: req.body.buktiKerjasama,
         tahunBerakhir: req.body.tahunBerakhir,
-        user: req.user._id,
+        user: req.user.id,
       });
       await save.save();
       res.json(successWithData(save));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   update: async (req, res) => {
@@ -43,19 +43,21 @@ export const bag1 = {
         },
         { new: true }
       );
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   delete: async (req, res) => {
     try {
       const data = await Sub1Bag1.findByIdAndDelete(req.params.id);
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
 };
@@ -71,7 +73,7 @@ export const bag2 = {
       }
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   create: async (req, res) => {
@@ -89,7 +91,7 @@ export const bag2 = {
       await save.save();
       res.json(successWithData(save));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   update: async (req, res) => {
@@ -101,19 +103,21 @@ export const bag2 = {
         },
         { new: true }
       );
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   delete: async (req, res) => {
     try {
       const data = await Sub1Bag2.findByIdAndDelete(req.params.id);
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
 };
@@ -129,7 +133,7 @@ export const bag3 = {
       }
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   create: async (req, res) => {
@@ -147,7 +151,7 @@ export const bag3 = {
       await save.save();
       res.json(successWithData(save));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   update: async (req, res) => {
@@ -159,19 +163,21 @@ export const bag3 = {
         },
         { new: true }
       );
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   delete: async (req, res) => {
     try {
       const data = await Sub1Bag3.findByIdAndDelete(req.params.id);
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
 };

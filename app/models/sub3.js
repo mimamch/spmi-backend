@@ -72,13 +72,34 @@ const sub3bagA3Schema = new Schema(
       pkm: Number,
       tugasTambahan: Number,
     },
-    jumlahSks: Number,
-    rataRataSks: Number,
+    // jumlahSks: Number,
+    // rataRataSks: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: { type: Boolean, default: false },
   },
   {
     timestamps: true,
+    virtuals: {
+      jumlahSks: {
+        get() {
+          return (
+            this.ewmp.pendidikan.psYangDiakreditasi +
+            this.ewmp.pendidikan.psLainDalamPT +
+            this.ewmp.pendidikan.psLainLuarPT +
+            this.ewmp.penelitian +
+            this.ewmp.pkm +
+            this.ewmp.tugasTambahan
+          );
+        },
+      },
+      rataRataSks: {
+        get() {
+          return this.jumlahSks / 6;
+        },
+      },
+    },
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
   }
 );
 
@@ -148,11 +169,137 @@ const sub3bagB2Schema = new Schema(
   {
     sumberPembiayaan: String,
     jumlahJudulPenelitian: {
-      TS2: Number,
-      TS1: Number,
-      TS: Number,
+      TS2: { type: Number, default: 0 },
+      TS1: { type: Number, default: 0 },
+      TS: { type: Number, default: 0 },
     },
-    jumlah: Number,
+    // jumlah: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+    virtuals: {
+      jumlah: {
+        get() {
+          return (
+            this.jumlahJudulPenelitian.TS1 +
+            this.jumlahJudulPenelitian.TS2 +
+            this.jumlahJudulPenelitian.TS
+          );
+        },
+      },
+    },
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
+  }
+);
+
+export const Sub3BagB2 = model("Sub3BagB2", sub3bagB2Schema);
+
+// SUBSTANDAR 3 - B - 3 PkM DTPS
+const sub3bagB3Schema = new Schema(
+  {
+    sumberPembiayaan: String,
+    jumlahJudulPKM: {
+      TS2: { type: Number, default: 0 },
+      TS1: { type: Number, default: 0 },
+      TS: { type: Number, default: 0 },
+    },
+    // jumlah: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+    virtuals: {
+      jumlah: {
+        get() {
+          return (
+            this.jumlahJudulPKM.TS1 +
+            this.jumlahJudulPKM.TS2 +
+            this.jumlahJudulPKM.TS
+          );
+        },
+      },
+    },
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
+  }
+);
+
+export const Sub3BagB3 = model("Sub3BagB3", sub3bagB3Schema);
+
+// SUBSTANDAR 3 - B - 4 - 1 Publikasi Ilmiah DTPS
+const sub3bagB41Schema = new Schema(
+  {
+    jenisPublikasi: String,
+    jumlahJudul: {
+      TS2: { type: Number, default: 0 },
+      TS1: { type: Number, default: 0 },
+      TS: { type: Number, default: 0 },
+    },
+    // jumlah: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+    virtuals: {
+      jumlah: {
+        get() {
+          return (
+            this.jumlahJudul.TS1 + this.jumlahJudul.TS2 + this.jumlahJudul.TS
+          );
+        },
+      },
+    },
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
+  }
+);
+
+export const Sub3BagB41 = model("Sub3BagB41", sub3bagB41Schema);
+
+// SUBSTANDAR 3 - B - 4 - 2 Publikasi Ilmiah DTPS
+const sub3bagB42Schema = new Schema(
+  {
+    jenisPublikasi: String,
+    jumlahJudul: {
+      TS2: { type: Number, default: 0 },
+      TS1: { type: Number, default: 0 },
+      TS: { type: Number, default: 0 },
+    },
+    // jumlah: () => {
+    //   return this.jumlahJudul.TS1 + this.jumlahJudul.TS2 + this.jumlahJudulTS;
+    // },
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+    virtuals: {
+      jumlah: {
+        get() {
+          return (
+            this.jumlahJudul.TS1 + this.jumlahJudul.TS2 + this.jumlahJudul.TS
+          );
+        },
+      },
+    },
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
+  }
+);
+
+export const Sub3BagB42 = model("Sub3BagB42", sub3bagB42Schema);
+
+// SUBSTANDAR 3 - B - 5 Karya Ilmiah DTPS yang Disitasi
+const sub3bagB5Schema = new Schema(
+  {
+    namaDosen: String,
+    judulArtikel: String,
+    jumlahSitasi: { type: Number, default: 0 },
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: { type: Boolean, default: false },
   },
@@ -161,4 +308,86 @@ const sub3bagB2Schema = new Schema(
   }
 );
 
-export const Sub3BagB2 = model("Sub3BagB2", sub3bagB2Schema);
+export const Sub3BagB5 = model("Sub3BagB5", sub3bagB5Schema);
+
+// SUBSTANDAR 3 - B - 6 Tabel 3.b.6) Produk/Jasa DTPS yang Diadopsi oleh Industri/Masyarakat
+const sub3bagB6Schema = new Schema(
+  {
+    namaDosen: String,
+    namaProduk: String,
+    deskripsiProduk: String,
+    bukti: String,
+    tahun: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export const Sub3BagB6 = model("Sub3BagB6", sub3bagB6Schema);
+
+// SUBSTANDAR 3 - B - 7 - 1 Tabel 3.b.7) Luaran Penelitian/PkM Lainnya oleh DTPS
+const sub3bagB71Schema = new Schema(
+  {
+    luaranPenelitian: String,
+    tahun: Number,
+    keterangan: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export const Sub3BagB71 = model("Sub3BagB71", sub3bagB71Schema);
+
+// SUBSTANDAR 3 - B - 7 - 2 Tabel 3.b.7) Bagian-2 HKI (Hak Cipta, Desain Produk Industri, dll.)
+const sub3bagB72Schema = new Schema(
+  {
+    luaranPenelitian: String,
+    tahun: Number,
+    keterangan: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export const Sub3BagB72 = model("Sub3BagB72", sub3bagB72Schema);
+
+// SUBSTANDAR 3 - B - 7 - 3 Tabel 3.b.7) Bagian-3 Teknologi Tepat Guna, Produk, Karya Seni, Rekayasa Sosial
+const sub3bagB73Schema = new Schema(
+  {
+    luaranPenelitian: String,
+    tahun: Number,
+    keterangan: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export const Sub3BagB73 = model("Sub3BagB73", sub3bagB73Schema);
+
+// SUBSTANDAR 3 - B - 7 - 4 Tabel 3.b.7) Bagian-4 Buku Ber-ISBN, Book Chapter
+const sub3bagB74Schema = new Schema(
+  {
+    luaranPenelitian: String,
+    tahun: Number,
+    keterangan: Number,
+    user: { type: mongoose.ObjectId, ref: "User" },
+    isAccepted: { type: Boolean, default: false },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+export const Sub3BagB74 = model("Sub3BagB74", sub3bagB74Schema);

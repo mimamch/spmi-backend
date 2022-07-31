@@ -12,7 +12,7 @@ export const bag1 = {
       }
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   create: async (req, res) => {
@@ -24,7 +24,7 @@ export const bag1 = {
       await save.save();
       res.json(successWithData(save));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   update: async (req, res) => {
@@ -36,19 +36,21 @@ export const bag1 = {
         },
         { new: true }
       );
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   delete: async (req, res) => {
     try {
       const data = await Sub2Bag1.findByIdAndDelete(req.params.id);
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
 };
@@ -64,7 +66,7 @@ export const bag2 = {
       }
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   create: async (req, res) => {
@@ -77,7 +79,7 @@ export const bag2 = {
       await save.save();
       res.json(successWithData(save));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   update: async (req, res) => {
@@ -89,19 +91,21 @@ export const bag2 = {
         },
         { new: true }
       );
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
   delete: async (req, res) => {
     try {
       const data = await Sub2Bag2.findByIdAndDelete(req.params.id);
-      if (!data) return res.json(errorWithMessage("Data Tidak Ditemukan!"));
+      if (!data)
+        return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
-      res.json(errorWithMessage(error.message));
+      res.status(500).json(errorWithMessage(error.message));
     }
   },
 };
