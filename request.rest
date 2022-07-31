@@ -255,3 +255,12 @@ content-type: application/json
 GET {{endpoint}}/sub4/
 content-type: application/json
 
+###
+# UPDATE SUB 4
+PUT {{endpoint}}/sub4/62e62f07c2e712ff39ffc6a4
+content-type: application/json
+
+{
+  "isAccepted" : true
+}
+
