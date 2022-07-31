@@ -3,7 +3,7 @@ const { model, Schema } = mongoose;
 
 const Sub5ASchema = new Schema(
   {
-    mataKuliahKompetensi: { type: Booelan, default: false },
+    mataKuliahKompetensi: { type: Boolean, default: false },
     bobot: {
       kuliah: { type: Number, default: 0 },
       seminar: { type: Number, default: 0 },
@@ -11,10 +11,10 @@ const Sub5ASchema = new Schema(
     },
     konversiKreditKeJam: { type: Number, default: 0 },
     capaianPembelajaran: {
-      sikap: { type: Booelan, default: false },
-      pengetahuan: { type: Booelan, default: false },
-      keterampilanUmum: { type: Booelan, default: false },
-      keterampilanKhusus: { type: Booelan, default: false },
+      sikap: { type: Boolean, default: false },
+      pengetahuan: { type: Boolean, default: false },
+      keterampilanUmum: { type: Boolean, default: false },
+      keterampilanKhusus: { type: Boolean, default: false },
     },
     dokumenRencanaPembelajaran: String,
     unitPenyelenggara: String,
@@ -63,4 +63,4 @@ const Sub5CSchema = new Schema(
   }
 );
 
-export const Sub5C = model("Sub5B", Sub5CSchema);
+export const Sub5C = model("Sub5C", Sub5CSchema);
