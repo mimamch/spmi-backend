@@ -207,7 +207,51 @@ content-type: application/json
       "TS2": 12,
       "TS1": 21,
       "TS": 23
-    },
-    "jumlah": 123
+    }
+    # "jumlah": 123
 }
+
+###
+# ADD SUB 3 BAG B 2
+GET {{endpoint}}/sub3/bagB2/
+content-type: application/json
+
+###
+# UPDATE SUB 3 BAG B 2
+PUT {{endpoint}}/sub3/bagB2/62e621944320708b3fef619d
+content-type: application/json
+
+{
+  "jumlahJudulPenelitian": {
+    "TS": 1,
+    "TS2": 10,
+    "TS1" : 3
+  }
+}
+
+
+###
+# ADD SUB 4
+POST {{endpoint}}/sub4/
+content-type: application/json
+
+{
+  "jenisPenggunaan": "Biaya Operasional Pendidikan",
+    "unitPengelolaanPs": {
+      "TS2":  2191350000,
+      "TS1":  2198550000 ,
+      "TS":  2265750000 
+    },
+    "programStudi": {
+      "TS2":  1350600000 ,
+      "TS1":  1357800000,
+      "TS":  1710750000 
+    }
+    
+}
+
+###
+# GET SUB 4
+GET {{endpoint}}/sub4/
+content-type: application/json
 
