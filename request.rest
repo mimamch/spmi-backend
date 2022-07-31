@@ -28,6 +28,11 @@ content-type: application/json
 GET {{endpoint}}/auth/me
 content-type: application/json
 
+###
+
+GET {{endpoint}}/auth/log-out
+content-type: application/json
+
 
 ###
 # ADD SUB 1 BAG 1
@@ -106,4 +111,103 @@ content-type: application/json
 
 DELETE {{endpoint}}/sub1/bag2/62e3fbd84ca1f25f3ebbac4a
 content-type: application/json
+
+###
+# ADD SUB 2 BAG 1
+POST {{endpoint}}/sub2/bag1
+content-type: application/json
+
+{
+    "tahunAkademik": 2019,
+    "dayaTampung": 324,
+    "jumlahCalonMahasiswa": {
+      "pendaftar": 345,
+      "lulusSeleksi": 34
+    },
+    "jumlahMahasiswaBaru": {
+      "reguler": 34,
+      "transfer": 43
+    },
+    "jumlahMahasiswaAktif": {
+      "reguler": 34,
+      "transfer": 2
+    }
+  
+}
+
+
+
+###
+# ADD SUB 2 BAG 2
+POST {{endpoint}}/sub2/bag2
+content-type: application/json
+
+{
+     "programStudi": "Sistem Informasi",
+    "jumlahMahasiswaAktif": {
+      "TS2": 4,
+      "TS1": 45,
+      "TS": 23
+    },
+    "jumlahMahasiswaAsingPenuhWaktu": {
+      "TS2": 23,
+      "TS1": 32,
+      "TS": 32
+    },
+    "jumlahMahasiswaAsingParuhWaktu": {
+      "TS2": 2,
+      "TS1": 57,
+      "TS": 45
+    }
+}
+
+###
+# ADD SUB 3 BAG A 1
+POST {{endpoint}}/sub3/bagA1
+content-type: application/json
+
+{
+    "namaDosen": "Dwi Romadhon",
+    "nidn": "1232342343",
+    "pendidikanPascaSarjana": {
+      "magister": "Universitas Indonesia",
+      "doktor": "Univeritar Gajah Mada"
+    },
+    "bidangKeahlian": "Informatika",
+    "keseuaian": "Sangat Sesuai",
+    "jabatanAkademik": "Ketua Prodi",
+    "sertifikatPendidikProfessional": "342324325432",
+    "sertifikatKompetensi": "35346243",
+    "mataKuliahYangDiAmpuPadaPsAkreditasi": "Informatika",
+    "kesesuaianBidangKeahlian": "Sangat Sesuai",
+    "mataKuliahYangDiAmpuPadaPsLain": "Sistem Informasi"
+}
+
+
+###
+# ADD SUB 3 BAG B 1
+POST {{endpoint}}/sub3/bagB1
+content-type: application/json
+
+{
+   "namaDosen": "Ahmad Cucus",
+    "bidangKeahlian": "Informatika",
+    "rekognisiDanBuktiPendukung": "343242342",
+    "tingkat": "Nasional",
+    "tahun": 2019
+}
+###
+# ADD SUB 3 BAG B 2
+POST {{endpoint}}/sub3/bagB2
+content-type: application/json
+
+{
+   "sumberPembiayaan": "Pemerintah",
+    "jumlahJudulPenelitian": {
+      "TS2": 12,
+      "TS1": 21,
+      "TS": 23
+    },
+    "jumlah": 123
+}
 

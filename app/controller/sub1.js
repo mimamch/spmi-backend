@@ -6,9 +6,9 @@ export const bag1 = {
     try {
       let data = [];
       if (!req.params.id) {
-        data = await Sub1Bag1.find();
+        data = await Sub1Bag1.find().populate("user");
       } else {
-        data = await Sub1Bag1.findById(req.params.id);
+        data = await Sub1Bag1.findById(req.params.id).populate("user");
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -17,6 +17,7 @@ export const bag1 = {
   },
   create: async (req, res) => {
     try {
+      console.log(req.user);
       const save = new Sub1Bag1({
         lembagaMitra: req.body.lembagaMitra,
         tingkat: req.body.tingkat,
@@ -25,6 +26,7 @@ export const bag1 = {
         waktuDanDurasi: req.body.waktuDanDurasi,
         buktiKerjasama: req.body.buktiKerjasama,
         tahunBerakhir: req.body.tahunBerakhir,
+        user: req.user._id,
       });
       await save.save();
       res.json(successWithData(save));
@@ -63,9 +65,9 @@ export const bag2 = {
     try {
       let data = [];
       if (!req.params.id) {
-        data = await Sub1Bag2.find();
+        data = await Sub1Bag2.find().populate("user");
       } else {
-        data = await Sub1Bag2.findById(req.params.id);
+        data = await Sub1Bag2.findById(req.params.id).populate("user");
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -82,6 +84,7 @@ export const bag2 = {
         waktuDanDurasi: req.body.waktuDanDurasi,
         buktiKerjasama: req.body.buktiKerjasama,
         tahunBerakhir: req.body.tahunBerakhir,
+        user: req.user._id,
       });
       await save.save();
       res.json(successWithData(save));
@@ -120,9 +123,9 @@ export const bag3 = {
     try {
       let data = [];
       if (!req.params.id) {
-        data = await Sub1Bag3.find();
+        data = await Sub1Bag3.find().populate("user");
       } else {
-        data = await Sub1Bag3.findById(req.params.id);
+        data = await Sub1Bag3.findById(req.params.id).populate("user");
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -139,6 +142,7 @@ export const bag3 = {
         waktuDanDurasi: req.body.waktuDanDurasi,
         buktiKerjasama: req.body.buktiKerjasama,
         tahunBerakhir: req.body.tahunBerakhir,
+        user: req.user._id,
       });
       await save.save();
       res.json(successWithData(save));
