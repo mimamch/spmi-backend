@@ -1,0 +1,74 @@
+@endpoint = http://localhost:3001
+
+###
+POST {{endpoint}}/sub6/sub6A
+content-type: application/json
+
+{
+    "namaDosen": "Dwi Romadhon",
+    "temaPenelitianSesuaiRoadMap": "Penelitian Satu",
+    "namaMahasiswa": "Muhammad Imam Choirudin",
+    "judulKegiatan": "Penelitian NodeJs",
+    "tahun": 2022
+}
+
+###
+# GET SUB 4
+GET {{endpoint}}/sub6/sub6A
+content-type: application/json
+
+###
+# UPDATE SUB 4
+PUT {{endpoint}}/sub6/sub6A/62eba62907e3d82f489f9398
+content-type: application/json
+
+{
+    "namaDosen": "Dwi Romadhon",
+    "temaPenelitianSesuaiRoadMap": "Penelitian Satu Updated",
+    "namaMahasiswa": "Muhammad Imam Choirudin",
+    "judulKegiatan": "Penelitian NodeJs",
+    "tahun": 2022
+}
+
+###
+DELETE {{endpoint}}/sub6/sub6A/62eba62907e3d82f489f9398
+content-type: application/json
+###
+
+
+
+
+# ########################################## #
+
+###
+POST {{endpoint}}/sub6/sub6B
+content-type: application/json
+
+{
+    "namaDosen": "Dwi Romadhon",
+    "temaPenelitianSesuaiRoadMap": "Penelitian Satu Updated",
+    "namaMahasiswa": "Muhammad Imam Choirudin",
+    "judulTesis": "Penelitian Express Js",
+    "tahun": 2022
+}
+
+###
+GET {{endpoint}}/sub6/sub6B
+content-type: application/json
+
+###
+PUT {{endpoint}}/sub6/sub6B/62eba7af07e3d82f489f93b6
+content-type: application/json
+
+{
+    "namaDosen": "Ahmad Cucus",
+    "temaPenelitianSesuaiRoadMap": "Penelitian Satu Updated",
+    "namaMahasiswa": "Muhammad Imam Choirudin",
+    "judulTesis": "Penelitian Express Js",
+    "tahun": 2022
+}
+
+###
+DELETE {{endpoint}}/sub6/sub6B/62eba7af07e3d82f489f93b6
+content-type: application/json
+###

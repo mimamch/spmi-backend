@@ -66,7 +66,7 @@ const Sub8CSchema = new Schema(
       TS: Number,
     },
     jumlahLulusanAkhir: { type: Number, default: 0 },
-    rataRataMasaStudi: String,
+    rataRataMasaStudi: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: { type: Boolean, default: false },
   },

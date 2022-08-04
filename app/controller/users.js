@@ -35,7 +35,10 @@ export const signIn = async (req, res) => {
     if (!compare) return res.json(errorWithMessage("Password Salah!"));
     user.password = undefined;
     const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET_KEY);
-    res.cookie("token", token, { httpOnly: true, maxAge: 7 * 24 * 60 * 60 });
+    res.cookie("token", token, {
+      httpOnly: true,
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+    });
     req.session.token = token;
     res.json(successWithData({ token }));
   } catch (error) {

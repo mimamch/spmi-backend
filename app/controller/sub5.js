@@ -5,10 +5,18 @@ export const bag5A = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub5A.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub5A.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub5A.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub5A.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub5A.find({ user: req.user.id });
+        } else {
+          data = await Sub5A.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -56,10 +64,18 @@ export const bag5B = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub5B.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub5B.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub5B.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub5B.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub5B.find({ user: req.user.id });
+        } else {
+          data = await Sub5B.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -107,10 +123,18 @@ export const bag5C = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub5C.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub5C.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub5C.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub5C.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub5C.find({ user: req.user.id });
+        } else {
+          data = await Sub5C.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {

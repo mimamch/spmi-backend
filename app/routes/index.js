@@ -7,6 +7,9 @@ import sub2Router from "./sub2.js";
 import sub3Router from "./sub3.js";
 import sub4Router from "./sub4.js";
 import sub5Router from "./sub5.js";
+import sub6Router from "./sub6.js";
+import sub7Router from "./sub7.js";
+import sub8Router from "./sub8.js";
 
 var router = Router();
 /* GET home page. */
@@ -21,5 +24,8 @@ router.use("/sub2", isLogin, sub2Router);
 router.use("/sub3", isLogin, sub3Router);
 router.use("/sub4", isLogin, sub4Router);
 router.use("/sub5", isLogin, sub5Router);
+router.use("/sub6", isLogin, sub6Router);
+router.use("/sub7", isLogin, sub7Router);
+router.use("/sub8", isLogin, sub8Router);
 
 export default router;

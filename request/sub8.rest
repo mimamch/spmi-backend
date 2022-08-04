@@ -1,0 +1,221 @@
+@endpoint = http://localhost:3001
+
+###
+POST {{endpoint}}/sub8/bag8A
+content-type: application/json
+
+{
+    "tahunLulus": 2021,
+    "jumlahLulusan": 203,
+    "indexPrestasiKumulatif": {
+      "min": 2.43,
+      "max": 3.34,
+      "rataRata": 3.96
+    }
+}
+
+###
+GET {{endpoint}}/sub8/bag8A/
+content-type: application/json
+
+###
+PUT {{endpoint}}/sub8/bag8A/62ebb6dea13e22d9f3945470
+content-type: application/json
+
+{
+   "tahunLulus": 2022,
+    "jumlahLulusan": 203,
+    "indexPrestasiKumulatif": {
+      "min": 2.43,
+      "max": 3.34,
+      "rataRata": 3.96
+    }
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8A/62ebba1fe15a457748733f79
+content-type: application/json
+###
+
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8B1
+content-type: application/json
+
+{
+   "namaKegiatan": "Memancing",
+    "waktuPerolehan": 2021,
+    "tingkat": "Nasional",
+    "prestasiDicapai": "Juara 1"
+}
+
+###
+GET {{endpoint}}/sub8/bag8B1/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8B1/62ebba4ce15a457748733f7c
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8B1/62ebba9fe15a457748733f99
+content-type: application/json
+
+{
+    "namaKegiatan": "Memancing",
+    "waktuPerolehan": 2022,
+    "tingkat": "Nasional",
+    "prestasiDicapai": "Juara 1"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8B1/62ebba9fe15a457748733f99
+content-type: application/json
+###
+
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8B2
+content-type: application/json
+
+{
+    "namaKegiatan": "String",
+    "waktuPerolehan": 209,
+    "tingkat": "Nasional",
+    "prestasiDicapai": "Juara Nasional"
+}
+
+###
+GET {{endpoint}}/sub8/bag8B2/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8B2/62ebbbb6e15a457748733fb3
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8B2/62ebbbb6e15a457748733fb3
+content-type: application/json
+
+{
+    "namaKegiatan": "Memancings",
+    "waktuPerolehan": 2022,
+    "tingkat": "Nasional",
+    "prestasiDicapai": "Juara 1"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8B2/62ebba9fe15a457748733f99
+content-type: application/json
+###
+
+# ########################################## #
+
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8C
+content-type: application/json
+
+{
+    "tahunMasuk": "TS-1",
+    "jumlahMahasiswaDiterima": 122,
+    "jumlahMahasiswaYangLulusPada": {
+      "TS6": 12,
+      "TS5": 32,
+      "TS4": 432,
+      "TS3": 54,
+      "TS2": 34,
+      "TS1": 435,
+      "TS": 465
+    },
+    "jumlahLulusanAkhir": 435,
+    "rataRataMasaStudi": 3.43
+}
+
+###
+GET {{endpoint}}/sub8/bag8C/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8C/62ebbc7e4ac1655eff4ca96b
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8C/62ebbc7e4ac1655eff4ca96b
+content-type: application/json
+
+{
+    "tahunMasuk": "TS-2",
+    "jumlahMahasiswaDiterima": 122,
+    "jumlahMahasiswaYangLulusPada": {
+      "TS6": 12,
+      "TS5": 32,
+      "TS4": 432,
+      "TS3": 54,
+      "TS2": 34,
+      "TS1": 435,
+      "TS": 465
+    },
+    "jumlahLulusanAkhir": 435,
+    "rataRataMasaStudi": 3.43
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8C/62ebba9fe15a457748733f99
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8D1
+content-type: application/json
+
+{
+    "tahunLulus": "TS-1",
+    "jumlahLulusan": 213,
+    "jumlahLulusanYangTerlacak": 435,
+    "jumlahLulusanDenganWaktuTunggu": {
+      "i": 456,
+      "ii": 45,
+      "iii": 454
+    }
+}
+
+###
+GET {{endpoint}}/sub8/bag8D1/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8D1/62ebbd5b4ac1655eff4ca978
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8D1/62ebbd5b4ac1655eff4ca978
+content-type: application/json
+
+{
+     "tahunLulus": "TS-1",
+    "jumlahLulusan": 213,
+    "jumlahLulusanYangTerlacak": 435,
+    "jumlahLulusanDenganWaktuTunggu": {
+      "i": 4526,
+      "ii": 45,
+      "iii": 454
+    }
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8D1/62ebba9fe15a457748733f99
+content-type: application/json
+###
+
+# ########################################## #

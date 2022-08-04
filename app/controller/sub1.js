@@ -5,10 +5,18 @@ export const bag1 = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub1Bag1.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub1Bag1.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub1Bag1.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub1Bag1.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub1Bag1.find({ user: req.user.id });
+        } else {
+          data = await Sub1Bag1.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -66,10 +74,18 @@ export const bag2 = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub1Bag2.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub1Bag2.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub1Bag2.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub1Bag2.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub1Bag2.find({ user: req.user.id });
+        } else {
+          data = await Sub1Bag2.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {
@@ -126,10 +142,18 @@ export const bag3 = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub1Bag3.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub1Bag3.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub1Bag3.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub1Bag3.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub1Bag3.find({ user: req.user.id });
+        } else {
+          data = await Sub1Bag3.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {

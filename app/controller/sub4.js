@@ -5,10 +5,18 @@ export const sub4 = {
   show: async (req, res) => {
     try {
       let data = [];
-      if (!req.params.id) {
-        data = await Sub4.find().populate("user");
+      if (req.user.role == "prodi") {
+        if (!req.params.id) {
+          data = await Sub4.find({ user: req.user.id }).populate("user");
+        } else {
+          data = await Sub4.findById(req.params.id).populate("user");
+        }
       } else {
-        data = await Sub4.findById(req.params.id).populate("user");
+        if (!req.params.id) {
+          data = await Sub4.find({ user: req.user.id });
+        } else {
+          data = await Sub4.findById(req.params.id);
+        }
       }
       res.json(successWithData(data));
     } catch (error) {

@@ -1,0 +1,41 @@
+@endpoint = http://localhost:3001
+
+###
+POST {{endpoint}}/sub7
+content-type: application/json
+
+{
+    "namaDosen": "Andre Barusman",
+    "temaPKMSesuaiRoadMap": "Tema 1",
+    "namaMahasiswa": "Solehul Ahmad",
+    "judulKegiatan": "Kegiatan 1",
+    "tahun": 2022
+}
+
+###
+# GET SUB 4
+GET {{endpoint}}/sub7
+content-type: application/json
+
+###
+# UPDATE SUB 4
+PUT {{endpoint}}/sub7/62ebaa6342b1a7e49d4be5b6
+content-type: application/json
+
+{
+   "namaDosen": "Andoni Barusman",
+    "temaPKMSesuaiRoadMap": "Tema 1",
+    "namaMahasiswa": "Solehul Ahmad",
+    "judulKegiatan": "Kegiatan 1",
+    "tahun": 2022
+}
+
+###
+DELETE {{endpoint}}/sub7/62ebaa2742b1a7e49d4be59a
+content-type: application/json
+###
+
+
+
+
+# ########################################## #

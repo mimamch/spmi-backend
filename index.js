@@ -49,7 +49,7 @@ app.use(
     resave: true,
     cookie: {
       secure: "auto",
-      maxAge: 7 * 24 * 60 * 60,
+      // maxAge: 7 * 24 * 60 * 60 * 1000,
     },
   })
 );
