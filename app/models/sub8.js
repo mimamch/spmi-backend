@@ -121,7 +121,7 @@ const Sub8E1Schema = new Schema(
   {
     tahunLulus: String,
     jumlahLulusan: Number,
-    jumlahLulusanYangTerlacak: Number,
+    jumlahLulusanYangTerlacak: { type: Number, default: 0 },
     jumlahBerdasarkanTingkat: {
       lokal: { type: Number, default: 0 },
       nasional: { type: Number, default: 0 },

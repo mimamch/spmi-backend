@@ -203,7 +203,7 @@ PUT {{endpoint}}/sub8/bag8D1/62ebbd5b4ac1655eff4ca978
 content-type: application/json
 
 {
-     "tahunLulus": "TS-1",
+    "tahunLulus": "TS-1",
     "jumlahLulusan": 213,
     "jumlahLulusanYangTerlacak": 435,
     "jumlahLulusanDenganWaktuTunggu": {
@@ -215,6 +215,504 @@ content-type: application/json
 
 ###
 DELETE {{endpoint}}/sub8/bag8D1/62ebba9fe15a457748733f99
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8D2
+content-type: application/json
+
+{
+    "tahunLulus": "TS-1",
+    "jumlahLulusan": 234,
+    "jumlahLulusanYangTerlacak": 121,
+    "jumlahTingkatKesesuaian": {
+      "rendah": 213,
+      "sedang": 43,
+      "tinggi": 23
+    }
+}
+
+###
+GET {{endpoint}}/sub8/bag8D2/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8D2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8D2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+{
+   "tahunLulus": "TS-1",
+    "jumlahLulusan": 234,
+    "jumlahLulusanYangTerlacak": 121,
+    "jumlahTingkatKesesuaian": {
+      "rendah": 34,
+      "sedang": 43,
+      "tinggi": 23
+    }
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8D2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8E1
+content-type: application/json
+
+{
+    "tahunLulus": "TS-1",
+    "jumlahLulusan": 34,
+     "jumlahLulusanYangTerlacak": 6575,
+    "jumlahBerdasarkanTingkat": {
+      "lokal": 657,
+      "nasional": 564,
+      "internasional": 54
+    }
+}
+
+###
+GET {{endpoint}}/sub8/bag8E1/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8E1/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8E1/62f0ad7c702b8dc5152d8c35
+content-type: application/json
+
+{
+    "tahunLulus": "TS-11",
+    "jumlahLulusan": 34,
+    "jumlahLulusanYangTerlacak": 6575,
+    "jumlahBerdasarkanTingkat": {
+      "lokal": 657,
+      "nasional": 564,
+      "internasional": 54
+    }
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8E1/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8E2Ref
+content-type: application/json
+
+{
+    "tahunLulus": "TS2",
+    "jumlahLulusan": 45,
+    "jumlahKepuasanPenggunaYangTerlacak": 3
+}
+
+###
+GET {{endpoint}}/sub8/bag8E2Ref/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8E2Ref/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8E2Ref/62f0ad7c702b8dc5152d8c35
+content-type: application/json
+
+{
+    "tahunLulus": "TS-11",
+    "jumlahLulusan": 34,
+    "jumlahLulusanYangTerlacak": 6575,
+    "jumlahBerdasarkanTingkat": {
+      "lokal": 657,
+      "nasional": 564,
+      "internasional": 54
+    }
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8E2Ref/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8E2
+content-type: application/json
+
+{
+     "jenisKemampuan": "ASASAS",
+    "tingkatKepuasanPengguna": {
+      "sangatBaik": 56,
+      "baik": 45,
+      "cukup": 34,
+      "kurang": 67
+    },
+    "rencanaTindakLanjut": "ZZZZ"
+}
+
+###
+GET {{endpoint}}/sub8/bag8E2/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8E2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8E2/62f0ae39702b8dc5152d8c45
+content-type: application/json
+
+{
+      "jenisKemampuan": "ASASAS",
+    "tingkatKepuasanPengguna": {
+      "sangatBaik": 56,
+      "baik": 45,
+      "cukup": 34,
+      "kurang": 67
+    },
+    "rencanaTindakLanjut": "ZZZZ"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8E2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F11
+content-type: application/json
+
+{
+    "jenisPublikasi": "hgjghh",
+    "jumlahJudul": {
+      "TS2": "56",
+      "TS1": "456",
+      "TS": 5435
+    }
+}
+
+###
+GET {{endpoint}}/sub8/bag8F11/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F11/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F11/62f0aea8702b8dc5152d8c54
+content-type: application/json
+
+{
+    "jenisPublikasi": "hgjghh",
+    "jumlahJudul": {
+      "TS2": "56",
+      "TS1": "456",
+      "TS": 5435
+    },
+    "isAccepted" : true
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F11/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F12
+content-type: application/json
+
+{
+    "jenisPublikasi": "hgjghh",
+    "jumlahJudul": {
+      "TS2": "56",
+      "TS1": "456",
+      "TS": 5435
+    }
+}
+
+###
+GET {{endpoint}}/sub8/bag8F12/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F12/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F12/62f0aef1702b8dc5152d8c5e
+content-type: application/json
+
+{
+    "jenisPublikasi": "hgjghh",
+    "jumlahJudul": {
+      "TS2": "56",
+      "TS1": "456",
+      "TS": 5435
+    },
+    "isAccepted" : true
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F12/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F2
+content-type: application/json
+
+{
+    "namaMahasiswa": "sfdfdsf",
+    "judulArtikel": "gfhfhgfh",
+    "jumlahSitasi": 342
+}
+
+###
+GET {{endpoint}}/sub8/bag8F2/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F2/62f0af3f702b8dc5152d8c66
+content-type: application/json
+
+{
+    "namaMahasiswa": "sfdfdsf",
+    "judulArtikel": "gfhfhgfh",
+    "jumlahSitasi": 342
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F2/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F3
+content-type: application/json
+
+{
+       "namaMahasiswa": "uvkvuidgfer",
+    "namaProduk": "uivfui",
+    "deskripsiProduk": "jhkhbij",
+    "bukti": "iklih.jhk",
+    "tahun": 2131
+}
+
+###
+GET {{endpoint}}/sub8/bag8F3/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F3/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F3/62f0af8b702b8dc5152d8c70
+content-type: application/json
+
+{
+     "namaMahasiswa": "uvkvuidgfer",
+    "namaProduk": "uivfui",
+    "deskripsiProduk": "jhkhbij",
+    "bukti": "iklih.jhk",
+    "tahun": 2131
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F3/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F41
+content-type: application/json
+
+{
+    "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+GET {{endpoint}}/sub8/bag8F41/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F41/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F41/62f0afe2702b8dc5152d8c78
+content-type: application/json
+
+{
+  "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F41/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F42
+content-type: application/json
+
+{
+    "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+GET {{endpoint}}/sub8/bag8F42/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F42/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F42/62f0afe2702b8dc5152d8c78
+content-type: application/json
+
+{
+  "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F42/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F43
+content-type: application/json
+
+{
+    "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+GET {{endpoint}}/sub8/bag8F43/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F43/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F43/62f0afe2702b8dc5152d8c78
+content-type: application/json
+
+{
+  "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F43/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+###
+
+# ########################################## #
+# ########################################## #
+
+###
+POST {{endpoint}}/sub8/bag8F44
+content-type: application/json
+
+{
+    "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+GET {{endpoint}}/sub8/bag8F44/
+content-type: application/json
+
+###
+GET {{endpoint}}/sub8/bag8F44/62f0acb78f7b1cecb9e342a0
+content-type: application/json
+
+
+###
+PUT {{endpoint}}/sub8/bag8F44/62f0afe2702b8dc5152d8c78
+content-type: application/json
+
+{
+  "luaranPenelitian": "fgdfdsxcf",
+    "tahun": 43545,
+    "keterangan": "iklb"
+}
+
+###
+DELETE {{endpoint}}/sub8/bag8F44/62f0acb78f7b1cecb9e342a0
 content-type: application/json
 ###
 
