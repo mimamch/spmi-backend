@@ -13,9 +13,9 @@ export const bag1 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub1Bag1.find({ user: req.user.id });
+          data = await Sub1Bag1.find().populate("user");
         } else {
-          data = await Sub1Bag1.findById(req.params.id);
+          data = await Sub1Bag1.findById(req.params.id).populate("user");
         }
       }
       res.json(successWithData(data));
@@ -150,9 +150,9 @@ export const bag3 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub1Bag3.find({ user: req.user.id });
+          data = await Sub1Bag3.find().populate("user");
         } else {
-          data = await Sub1Bag3.findById(req.params.id);
+          data = await Sub1Bag3.findById(req.params.id).populate("user");
         }
       }
       res.json(successWithData(data));

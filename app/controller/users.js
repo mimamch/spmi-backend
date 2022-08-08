@@ -30,9 +30,11 @@ export const signIn = async (req, res) => {
     const user = await User.findOne({
       $or: [{ username: username }, { email: username }],
     }).select("+password");
-    if (!user) return res.json(errorWithMessage("User Tidak Terdaftar"));
+    if (!user)
+      return res.status(401).json(errorWithMessage("User Tidak Terdaftar"));
     const compare = bcrypt.compareSync(password, user.password);
-    if (!compare) return res.json(errorWithMessage("Password Salah!"));
+    if (!compare)
+      return res.status(401).json(errorWithMessage("Password Salah!"));
     user.password = undefined;
     const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET_KEY);
     res.cookie("token", token, {
@@ -59,7 +61,6 @@ export const logOut = async (req, res) => {
 
 export const Me = async (req, res) => {
   try {
-    console.log(req.session);
     if (!req.session.token && !req.cookies.token)
       return res
         .status(400)
