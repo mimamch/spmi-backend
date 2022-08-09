@@ -36,11 +36,27 @@ export var app = express();
 app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "ejs");
 
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+var whitelist = [
+  "http://192.168.4.109:3000",
+  "http://192.168.4.109",
+  "http://localhost:3000",
+];
+app.use(
+  cors({
+    credentials: true,
+    origin: function (origin, callback) {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(
   session({
     store: store,
@@ -48,11 +64,12 @@ app.use(
     secret: "iloveyou3000",
     resave: true,
     cookie: {
+      sameSite: "none",
       secure: "auto",
-      // maxAge: 7 * 24 * 60 * 60 * 1000,
     },
   })
 );
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);

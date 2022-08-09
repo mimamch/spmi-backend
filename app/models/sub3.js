@@ -19,7 +19,7 @@ const sub3bagA1Schema = new Schema(
     kesesuaianBidangKeahlian: String,
     mataKuliahYangDiAmpuPadaPsLain: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -48,7 +48,7 @@ const sub3bagA2Schema = new Schema(
     },
     rataRataJumlah: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -75,7 +75,7 @@ const sub3bagA3Schema = new Schema(
     // jumlahSks: Number,
     // rataRataSks: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -118,7 +118,7 @@ const sub3bagA4Schema = new Schema(
     mataKuliahYangDiAmpuPadaPsAkreditasi: String,
     kesesuaianBidangKeahlian: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -137,7 +137,7 @@ const sub3bagA5Schema = new Schema(
     mataKuliahYangDiAmpu: String,
     bobotKredit: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -155,7 +155,7 @@ const sub3bagB1Schema = new Schema(
     tingkat: String,
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -175,7 +175,7 @@ const sub3bagB2Schema = new Schema(
     },
     // jumlah: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -208,7 +208,7 @@ const sub3bagB3Schema = new Schema(
     },
     // jumlah: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -241,7 +241,7 @@ const sub3bagB41Schema = new Schema(
     },
     // jumlah: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -274,7 +274,7 @@ const sub3bagB42Schema = new Schema(
     //   return this.jumlahJudul.TS1 + this.jumlahJudul.TS2 + this.jumlahJudulTS;
     // },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -301,7 +301,7 @@ const sub3bagB5Schema = new Schema(
     judulArtikel: String,
     jumlahSitasi: { type: Number, default: 0 },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -319,7 +319,7 @@ const sub3bagB6Schema = new Schema(
     bukti: String,
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -335,7 +335,7 @@ const sub3bagB71Schema = new Schema(
     tahun: Number,
     keterangan: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -351,7 +351,7 @@ const sub3bagB72Schema = new Schema(
     tahun: Number,
     keterangan: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -367,7 +367,7 @@ const sub3bagB73Schema = new Schema(
     tahun: Number,
     keterangan: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -383,7 +383,7 @@ const sub3bagB74Schema = new Schema(
     tahun: Number,
     keterangan: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

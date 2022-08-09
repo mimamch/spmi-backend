@@ -15,7 +15,7 @@ const Sub4Schema = new Schema(
       TS: { type: Number, default: 0 },
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

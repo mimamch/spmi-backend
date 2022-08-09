@@ -12,7 +12,7 @@ const sub1bag1Schema = new Schema(
     buktiKerjasama: String,
     tahunBerakhir: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -31,7 +31,7 @@ const sub1bag2Schema = new Schema(
     waktuDanDurasi: String,
     buktiKerjasama: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -51,7 +51,7 @@ const sub1bag3Schema = new Schema(
     buktiKerjasama: String,
     tahunBerakhir: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

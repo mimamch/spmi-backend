@@ -9,7 +9,7 @@ const Sub6ASchema = new Schema(
     judulKegiatan: String,
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -26,7 +26,7 @@ const Sub6BSchema = new Schema(
     judulTesis: String,
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

@@ -11,7 +11,7 @@ const Sub8ASchema = new Schema(
       rataRata: String,
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -27,7 +27,7 @@ const Sub8B1Schema = new Schema(
     tingkat: String,
     prestasiDicapai: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -43,7 +43,7 @@ const Sub8B2Schema = new Schema(
     tingkat: String,
     prestasiDicapai: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -68,7 +68,7 @@ const Sub8CSchema = new Schema(
     jumlahLulusanAkhir: { type: Number, default: 0 },
     rataRataMasaStudi: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -88,7 +88,7 @@ const Sub8D1Schema = new Schema(
       iii: { type: Number, default: 0 },
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -108,7 +108,7 @@ const Sub8D2Schema = new Schema(
       tinggi: { type: Number, default: 0 },
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -128,7 +128,7 @@ const Sub8E1Schema = new Schema(
       internasional: { type: Number, default: 0 },
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -143,7 +143,7 @@ const Sub8E2refSchema = new Schema(
     jumlahLulusan: { type: Number, default: 0 },
     jumlahKepuasanPenggunaYangTerlacak: { type: Number, default: 0 },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -163,7 +163,7 @@ const Sub8E2Schema = new Schema(
     },
     rencanaTindakLanjut: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -181,7 +181,7 @@ const Sub8F11Schema = new Schema(
       TS: { type: Number, default: 0 },
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -210,7 +210,7 @@ const Sub8F12Schema = new Schema(
       TS: { type: Number, default: 0 },
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -236,7 +236,7 @@ const Sub8F2Schema = new Schema(
     judulArtikel: String,
     jumlahSitasi: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -253,7 +253,7 @@ const Sub8F3Schema = new Schema(
     bukti: String,
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -268,7 +268,7 @@ const Sub8F41Schema = new Schema(
     tahun: Number,
     keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -283,7 +283,7 @@ const Sub8F42Schema = new Schema(
     tahun: Number,
     keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -298,7 +298,7 @@ const Sub8F43Schema = new Schema(
     tahun: Number,
     keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -313,7 +313,7 @@ const Sub8F44Schema = new Schema(
     tahun: Number,
     keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

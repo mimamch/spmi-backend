@@ -19,7 +19,7 @@ const Sub5ASchema = new Schema(
     dokumenRencanaPembelajaran: String,
     unitPenyelenggara: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -36,7 +36,7 @@ const Sub5BSchema = new Schema(
     bentukIntegrasi: String,
     tahun: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -56,7 +56,7 @@ const Sub5CSchema = new Schema(
     },
     rencanaTindakLanjut: String,
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

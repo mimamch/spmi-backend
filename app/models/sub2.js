@@ -4,7 +4,7 @@ const { model, Schema } = mongoose;
 // SUBSTANDAR 2 - 1 Seleksi Mahasiswa Baru
 const sub2bag1Schema = new Schema(
   {
-    tahunAkademik: Number,
+    tahunAkademik: String,
     dayaTampung: Number,
     jumlahCalonMahasiswa: {
       pendaftar: Number,
@@ -19,7 +19,7 @@ const sub2bag1Schema = new Schema(
       transfer: Number,
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,
@@ -34,7 +34,7 @@ const sub2bag1Schema = new Schema(
 //     jumlahMahasiswaBaru: mongoose.Mixed,
 //     jumlahMahasiswaAktif: mongoose.Mixed,
 //     user: { type: mongoose.ObjectId, ref: "User" },
-//     isAccepted: { type: Boolean, default: false },
+//     isAccepted: String,
 //   },
 //   {
 //     timestamps: true,
@@ -63,7 +63,7 @@ const sub2bag2Schema = new Schema(
       TS: Number,
     },
     user: { type: mongoose.ObjectId, ref: "User" },
-    isAccepted: { type: Boolean, default: false },
+    isAccepted: String,
   },
   {
     timestamps: true,

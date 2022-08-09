@@ -29,7 +29,7 @@ export const bagA1 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagA1.find({ user: req.user.id });
+          data = await Sub3BagA1.find().populate("user");
         } else {
           data = await Sub3BagA1.findById(req.params.id);
         }
@@ -91,7 +91,7 @@ export const bagA2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagA2.find({ user: req.user.id });
+          data = await Sub3BagA2.find().populate("user");
         } else {
           data = await Sub3BagA2.findById(req.params.id);
         }
@@ -153,7 +153,7 @@ export const bagA3 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagA3.find({ user: req.user.id });
+          data = await Sub3BagA3.find().populate("user");
         } else {
           data = await Sub3BagA3.findById(req.params.id);
         }
@@ -215,7 +215,7 @@ export const bagA4 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagA4.find({ user: req.user.id });
+          data = await Sub3BagA4.find().populate("user");
         } else {
           data = await Sub3BagA4.findById(req.params.id);
         }
@@ -277,7 +277,7 @@ export const bagA5 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagA5.find({ user: req.user.id });
+          data = await Sub3BagA5.find().populate("user");
         } else {
           data = await Sub3BagA5.findById(req.params.id);
         }
@@ -339,7 +339,7 @@ export const bagB1 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB1.find({ user: req.user.id });
+          data = await Sub3BagB1.find().populate("user");
         } else {
           data = await Sub3BagB1.findById(req.params.id);
         }
@@ -401,7 +401,7 @@ export const bagB2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB2.find({ user: req.user.id });
+          data = await Sub3BagB2.find().populate("user");
         } else {
           data = await Sub3BagB2.findById(req.params.id);
         }
@@ -464,7 +464,7 @@ export const bagB3 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB2.find({ user: req.user.id });
+          data = await Sub3BagB2.find().populate("user");
         } else {
           data = await Sub3BagB2.findById(req.params.id);
         }
@@ -527,7 +527,7 @@ export const bagB41 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB41.find({ user: req.user.id });
+          data = await Sub3BagB41.find().populate("user");
         } else {
           data = await Sub3BagB41.findById(req.params.id);
         }
@@ -590,7 +590,7 @@ export const bagB42 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB42.find({ user: req.user.id });
+          data = await Sub3BagB42.find().populate("user");
         } else {
           data = await Sub3BagB42.findById(req.params.id);
         }
@@ -653,7 +653,7 @@ export const bagB5 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB5.find({ user: req.user.id });
+          data = await Sub3BagB5.find().populate("user");
         } else {
           data = await Sub3BagB5.findById(req.params.id);
         }
@@ -716,7 +716,7 @@ export const bagB6 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB6.find({ user: req.user.id });
+          data = await Sub3BagB6.find().populate("user");
         } else {
           data = await Sub3BagB6.findById(req.params.id);
         }
@@ -779,7 +779,7 @@ export const bagB71 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB71.find({ user: req.user.id });
+          data = await Sub3BagB71.find().populate("user");
         } else {
           data = await Sub3BagB71.findById(req.params.id);
         }
@@ -842,7 +842,7 @@ export const bagB72 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB72.find({ user: req.user.id });
+          data = await Sub3BagB72.find().populate("user");
         } else {
           data = await Sub3BagB72.findById(req.params.id);
         }
@@ -905,7 +905,7 @@ export const bagB73 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB73.find({ user: req.user.id });
+          data = await Sub3BagB73.find().populate("user");
         } else {
           data = await Sub3BagB73.findById(req.params.id);
         }
@@ -968,7 +968,7 @@ export const bagB74 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB74.find({ user: req.user.id });
+          data = await Sub3BagB74.find().populate("user");
         } else {
           data = await Sub3BagB74.findById(req.params.id);
         }
