@@ -34,24 +34,61 @@ const sub3bagA2Schema = new Schema(
     namaDosen: String,
     jumlahMahasiswaYangDibimbing: {
       PsAkreditasi: {
-        TS2: Number,
-        TS1: Number,
-        TS: Number,
-        avg: Number,
+        TS2: { type: Number, default: 0 },
+        TS1: { type: Number, default: 0 },
+        TS: { type: Number, default: 0 },
+        // avg: {type: Number, default: 0},
       },
       PsLain: {
-        TS2: Number,
-        TS1: Number,
-        TS: Number,
-        avg: Number,
+        TS2: { type: Number, default: 0 },
+        TS1: { type: Number, default: 0 },
+        TS: { type: Number, default: 0 },
+        // avg: {type: Number, default: 0},
       },
     },
-    rataRataJumlah: Number,
+    // rataRataJumlah: {type: Number, default: 0},
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
   },
   {
     timestamps: true,
+    virtuals: {
+      avgPsAkreditasi: {
+        get() {
+          return (
+            (this.jumlahMahasiswaYangDibimbing.PsAkreditasi.TS2 +
+              this.jumlahMahasiswaYangDibimbing.PsAkreditasi.TS1 +
+              this.jumlahMahasiswaYangDibimbing.PsAkreditasi.TS) /
+            3
+          );
+        },
+      },
+      avgPsLain: {
+        get() {
+          return (
+            (this.jumlahMahasiswaYangDibimbing.PsLain.TS2 +
+              this.jumlahMahasiswaYangDibimbing.PsLain.TS1 +
+              this.jumlahMahasiswaYangDibimbing.PsLain.TS) /
+            3
+          );
+        },
+      },
+      avgJumlah: {
+        get() {
+          return (
+            (this.jumlahMahasiswaYangDibimbing.PsAkreditasi.TS2 +
+              this.jumlahMahasiswaYangDibimbing.PsAkreditasi.TS1 +
+              this.jumlahMahasiswaYangDibimbing.PsAkreditasi.TS +
+              this.jumlahMahasiswaYangDibimbing.PsLain.TS2 +
+              this.jumlahMahasiswaYangDibimbing.PsLain.TS1 +
+              this.jumlahMahasiswaYangDibimbing.PsLain.TS) /
+            6
+          );
+        },
+      },
+    },
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
   }
 );
 

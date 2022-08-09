@@ -5,10 +5,10 @@ POST {{endpoint}}/auth/sign-up HTTP/1.1
 content-type: application/json
 
 {
-    "username": "informatika",
-    "fullName": "Prodi Informatika",
-    "email": "informatika@gmail.com",
-    "password": "informatika"
+    "username": "mimamchprodi",
+    "fullName": "Admin mimamch",
+    "email": "mimamchprodi@gmail.com",
+    "password": "mimamchprodi"
 }
 
 ###
@@ -17,10 +17,11 @@ POST {{endpoint}}/auth/sign-in
 content-type: application/json
 
 {
-    "username": "udinsedunia",
+    "username": "mimamch",
     # OR
-    "email": "udinsedunia2@gmail.com",
-    "password": "udinganteng123"
+    "email": "mimamch@gmail.com",
+    "password": "mimamch",
+    "role" : "admin"
 }
 
 ###

@@ -40,16 +40,20 @@ var whitelist = [
   "http://192.168.4.109:3000",
   "http://192.168.4.109",
   "http://localhost:3000",
+  "http://192.168.31.35:3000",
 ];
 app.use(
   cors({
     credentials: true,
+    // origin: function (origin, callback) {
+    //   if (whitelist.indexOf(origin) !== -1) {
+    //     callback(null, true);
+    //   } else {
+    //     callback(new Error("Not allowed by CORS"));
+    //   }
+    // },
     origin: function (origin, callback) {
-      if (whitelist.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
+      callback(null, true);
     },
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
