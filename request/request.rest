@@ -1,6 +1,7 @@
 # SIGNUP
 @endpoint = http://localhost:3001
 
+###
 POST {{endpoint}}/auth/sign-up HTTP/1.1
 content-type: application/json
 
@@ -8,7 +9,21 @@ content-type: application/json
     "username": "mimamchprodi",
     "fullName": "Admin mimamch",
     "email": "mimamchprodi@gmail.com",
-    "password": "mimamchprodi"
+    "password": "mimamchprodi",
+    "role": "prodi"
+}
+
+###
+###
+POST {{endpoint}}/auth/sign-up HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mimamch",
+    "fullName": "Admin mimamch",
+    "email": "mimamch@gmail.com",
+    "password": "mimamch",
+    "role": "admin"
 }
 
 ###
