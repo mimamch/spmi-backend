@@ -63,8 +63,8 @@ export const Me = async (req, res) => {
   try {
     if (!req.session.token && !req.cookies.token)
       return res
-        .status(400)
-        .json(errorWithMessage("Silahkan Login Telebih Dauhulu"));
+        .status(401)
+        .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
 
     const token = req.session.token || req.cookies.token;
     const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
