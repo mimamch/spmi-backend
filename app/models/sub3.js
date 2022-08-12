@@ -370,7 +370,7 @@ const sub3bagB71Schema = new Schema(
   {
     luaranPenelitian: String,
     tahun: Number,
-    keterangan: Number,
+    keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
   },
@@ -386,7 +386,7 @@ const sub3bagB72Schema = new Schema(
   {
     luaranPenelitian: String,
     tahun: Number,
-    keterangan: Number,
+    keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
   },
@@ -402,7 +402,7 @@ const sub3bagB73Schema = new Schema(
   {
     luaranPenelitian: String,
     tahun: Number,
-    keterangan: Number,
+    keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
   },
@@ -418,7 +418,7 @@ const sub3bagB74Schema = new Schema(
   {
     luaranPenelitian: String,
     tahun: Number,
-    keterangan: Number,
+    keterangan: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
   },

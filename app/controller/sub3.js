@@ -8,6 +8,7 @@ import {
   Sub3BagB2,
   Sub3BagB3,
   Sub3BagB41,
+  Sub3BagB42,
   Sub3BagB5,
   Sub3BagB6,
   Sub3BagB71,
@@ -458,15 +459,15 @@ export const bagB3 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB2.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB3.find({ user: req.user.id }).populate("user");
         } else {
-          data = await Sub3BagB2.findById(req.params.id).populate("user");
+          data = await Sub3BagB3.findById(req.params.id).populate("user");
         }
       } else {
         if (!req.params.id) {
-          data = await Sub3BagB2.find().populate("user");
+          data = await Sub3BagB3.find().populate("user");
         } else {
-          data = await Sub3BagB2.findById(req.params.id);
+          data = await Sub3BagB3.findById(req.params.id);
         }
       }
 
