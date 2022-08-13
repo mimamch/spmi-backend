@@ -3,7 +3,8 @@ const { model, Schema } = mongoose;
 
 const Sub5ASchema = new Schema(
   {
-    mataKuliahKompetensi: { type: Boolean, default: false },
+    namaMataKuliah: String,
+    mataKuliahKompetensi: { type: String, default: "N", enum: ["Y", "N"] },
     bobot: {
       kuliah: { type: Number, default: 0 },
       seminar: { type: Number, default: 0 },
@@ -11,10 +12,10 @@ const Sub5ASchema = new Schema(
     },
     konversiKreditKeJam: { type: Number, default: 0 },
     capaianPembelajaran: {
-      sikap: { type: Boolean, default: false },
-      pengetahuan: { type: Boolean, default: false },
-      keterampilanUmum: { type: Boolean, default: false },
-      keterampilanKhusus: { type: Boolean, default: false },
+      sikap: { type: String, default: "N", enum: ["Y", "N"] },
+      pengetahuan: { type: String, default: "N", enum: ["Y", "N"] },
+      keterampilanUmum: { type: String, default: "N", enum: ["Y", "N"] },
+      keterampilanKhusus: { type: String, default: "N", enum: ["Y", "N"] },
     },
     dokumenRencanaPembelajaran: String,
     unitPenyelenggara: String,
