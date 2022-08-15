@@ -13,7 +13,7 @@ export const sub6A = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub6A.find({ user: req.user.id });
+          data = await Sub6A.find().populate("user");
         } else {
           data = await Sub6A.findById(req.params.id);
         }
@@ -72,7 +72,7 @@ export const sub6B = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub6B.find({ user: req.user.id });
+          data = await Sub6B.find().populate("user");
         } else {
           data = await Sub6B.findById(req.params.id);
         }

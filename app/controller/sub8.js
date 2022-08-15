@@ -31,7 +31,7 @@ export const bag8A = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8A.find({ user: req.user.id }).populate("user");
+          data = await Sub8A.find().populate("user");
         } else {
           data = await Sub8A.findById(req.params.id).populate("user");
         }
@@ -90,7 +90,7 @@ export const bag8B1 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8B1.find({ user: req.user.id }).populate("user");
+          data = await Sub8B1.find().populate("user");
         } else {
           data = await Sub8B1.findById(req.params.id).populate("user");
         }
@@ -149,7 +149,7 @@ export const bag8B2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8B2.find({ user: req.user.id }).populate("user");
+          data = await Sub8B2.find().populate("user");
         } else {
           data = await Sub8B2.findById(req.params.id).populate("user");
         }
@@ -208,7 +208,7 @@ export const bag8C = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8C.find({ user: req.user.id }).populate("user");
+          data = await Sub8C.find().populate("user");
         } else {
           data = await Sub8C.findById(req.params.id).populate("user");
         }
@@ -267,7 +267,7 @@ export const bag8D1 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8D1.find({ user: req.user.id }).populate("user");
+          data = await Sub8D1.find().populate("user");
         } else {
           data = await Sub8D1.findById(req.params.id).populate("user");
         }
@@ -326,7 +326,7 @@ export const bag8D2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8D2.find({ user: req.user.id }).populate("user");
+          data = await Sub8D2.find().populate("user");
         } else {
           data = await Sub8D2.findById(req.params.id).populate("user");
         }
@@ -385,7 +385,7 @@ export const bag8E1 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8E1.find({ user: req.user.id }).populate("user");
+          data = await Sub8E1.find().populate("user");
         } else {
           data = await Sub8E1.findById(req.params.id).populate("user");
         }
@@ -444,7 +444,7 @@ export const bag8E2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8E2.find({ user: req.user.id }).populate("user");
+          data = await Sub8E2.find().populate("user");
         } else {
           data = await Sub8E2.findById(req.params.id).populate("user");
         }
@@ -503,7 +503,7 @@ export const bag8E2Ref = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8E2ref.find({ user: req.user.id }).populate("user");
+          data = await Sub8E2ref.find().populate("user");
         } else {
           data = await Sub8E2ref.findById(req.params.id).populate("user");
         }
@@ -562,7 +562,7 @@ export const bag8F11 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F11.find({ user: req.user.id }).populate("user");
+          data = await Sub8F11.find().populate("user");
         } else {
           data = await Sub8F11.findById(req.params.id).populate("user");
         }
@@ -621,7 +621,7 @@ export const bag8F12 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F12.find({ user: req.user.id }).populate("user");
+          data = await Sub8F12.find().populate("user");
         } else {
           data = await Sub8F12.findById(req.params.id).populate("user");
         }
@@ -680,7 +680,7 @@ export const bag8F2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F2.find({ user: req.user.id }).populate("user");
+          data = await Sub8F2.find().populate("user");
         } else {
           data = await Sub8F2.findById(req.params.id).populate("user");
         }
@@ -739,7 +739,7 @@ export const bag8F3 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F3.find({ user: req.user.id }).populate("user");
+          data = await Sub8F3.find().populate("user");
         } else {
           data = await Sub8F3.findById(req.params.id).populate("user");
         }
@@ -798,7 +798,7 @@ export const bag8F41 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F41.find({ user: req.user.id }).populate("user");
+          data = await Sub8F41.find().populate("user");
         } else {
           data = await Sub8F41.findById(req.params.id).populate("user");
         }
@@ -857,7 +857,7 @@ export const bag8F42 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F42.find({ user: req.user.id }).populate("user");
+          data = await Sub8F42.find().populate("user");
         } else {
           data = await Sub8F42.findById(req.params.id).populate("user");
         }
@@ -916,7 +916,7 @@ export const bag8F43 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F43.find({ user: req.user.id }).populate("user");
+          data = await Sub8F43.find().populate("user");
         } else {
           data = await Sub8F43.findById(req.params.id).populate("user");
         }
@@ -975,7 +975,7 @@ export const bag8F44 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub8F44.find({ user: req.user.id }).populate("user");
+          data = await Sub8F44.find().populate("user");
         } else {
           data = await Sub8F44.findById(req.params.id).populate("user");
         }

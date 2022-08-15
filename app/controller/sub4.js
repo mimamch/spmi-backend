@@ -13,7 +13,7 @@ export const sub4 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub4.find({ user: req.user.id });
+          data = await Sub4.find().populate("user");
         } else {
           data = await Sub4.findById(req.params.id);
         }

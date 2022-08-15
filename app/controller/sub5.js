@@ -13,7 +13,7 @@ export const bag5A = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub5A.find({ user: req.user.id });
+          data = await Sub5A.find().populate("user");
         } else {
           data = await Sub5A.findById(req.params.id);
         }
@@ -72,7 +72,7 @@ export const bag5B = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub5B.find({ user: req.user.id });
+          data = await Sub5B.find().populate("user");
         } else {
           data = await Sub5B.findById(req.params.id);
         }
@@ -131,7 +131,7 @@ export const bag5C = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub5C.find({ user: req.user.id });
+          data = await Sub5C.find().populate("user");
         } else {
           data = await Sub5C.findById(req.params.id);
         }
