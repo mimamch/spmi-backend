@@ -4,7 +4,7 @@ const { model, Schema } = mongoose;
 const Sub8ASchema = new Schema(
   {
     tahunLulus: String,
-    jumlahLulusan: String,
+    jumlahLulusan: Number,
     indexPrestasiKumulatif: {
       min: String,
       max: String,
