@@ -3,6 +3,8 @@ const { model, Schema } = mongoose;
 
 const Sub5ASchema = new Schema(
   {
+    semester: String,
+    kodeMataKuliah: String,
     namaMataKuliah: String,
     mataKuliahKompetensi: { type: String, default: "N", enum: ["Y", "N"] },
     bobot: {

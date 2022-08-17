@@ -82,7 +82,7 @@ export const bag2 = {
         }
       } else {
         if (!req.params.id) {
-          data = await Sub1Bag2.find({ user: req.user.id });
+          data = await Sub1Bag2.find().populate("user");
         } else {
           data = await Sub1Bag2.findById(req.params.id);
         }

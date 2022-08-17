@@ -12,6 +12,10 @@ const userSchema = new Schema({
     default: "admin",
     required: true,
   },
+  visi: String,
+  misi: String,
+  tujuan: String,
+  sasaran: String,
 });
 
 export default model("User", userSchema);

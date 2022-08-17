@@ -131,7 +131,7 @@ const sub3bagA3Schema = new Schema(
       },
       rataRataSks: {
         get() {
-          return this.jumlahSks / 6;
+          return this.jumlahSks / 2;
         },
       },
     },

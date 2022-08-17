@@ -76,3 +76,29 @@ export const Me = async (req, res) => {
     res.status(500).json(errorWithMessage(error.message));
   }
 };
+
+export const editProfile = async (req, res) => {
+  try {
+    if (!req.session.token && !req.cookies.token)
+      return res
+        .status(401)
+        .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
+
+    const token = req.session.token || req.cookies.token;
+    const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    if (!data) return res.status(400).json(errorWithMessage("Token Invalid"));
+
+    const edit = await User.findByIdAndUpdate(
+      data.id,
+      {
+        ...req.body,
+      },
+      { new: true }
+    );
+
+    res.json(successWithData(edit));
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(errorWithMessage(error.message));
+  }
+};
