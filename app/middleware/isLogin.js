@@ -13,11 +13,15 @@ const isLogin = async (req, res, next) => {
     if (!decode)
       return res
         .status(400)
-        .json(errorWithMessage("Akses Ditolak, Mohon Login Telebih Dahulu2"));
+        .json(errorWithMessage("Akses Ditolak, Mohon Login Telebih Dahulu"));
     const user = await User.findById(decode._id);
-    const newToken = jwt.sign(user.toJSON(), process.env.JWT_SECRET_KEY);
-    req.session.token = newToken;
-    res.cookie("token", newToken);
+    if (!user)
+      return res
+        .status(400)
+        .json(errorWithMessage("Akses Ditolak, Mohon Login Ulang"));
+    // const newToken = jwt.sign(user.toJSON(), process.env.JWT_SECRET_KEY);
+    // req.session.token = newToken;
+    // res.cookie("token", newToken);
     req.user = user;
     next();
   } catch (error) {

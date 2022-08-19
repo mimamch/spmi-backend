@@ -36,7 +36,6 @@ export const signIn = async (req, res) => {
     if (!compare)
       return res.status(401).json(errorWithMessage("Password Salah!"));
     user.password = undefined;
-    console.log(user);
     user = {
       _id: user._id,
       username: user.username,
