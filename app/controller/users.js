@@ -27,7 +27,7 @@ export const signUp = async (req, res) => {
 export const signIn = async (req, res) => {
   try {
     const { username, password } = req.body;
-    const user = await User.findOne({
+    let user = await User.findOne({
       $or: [{ username: username }, { email: username }],
     }).select("+password");
     if (!user)
@@ -36,7 +36,15 @@ export const signIn = async (req, res) => {
     if (!compare)
       return res.status(401).json(errorWithMessage("Password Salah!"));
     user.password = undefined;
-    const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET_KEY);
+    console.log(user);
+    user = {
+      _id: user._id,
+      username: user.username,
+      fullName: user.fullName,
+      email: user.email,
+      role: user.role,
+    };
+    const token = jwt.sign(user, process.env.JWT_SECRET_KEY);
     res.cookie("token", token, {
       httpOnly: true,
       maxAge: 30 * 24 * 60 * 60 * 1000,
