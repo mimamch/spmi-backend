@@ -16,6 +16,24 @@ const userSchema = new Schema({
   misi: String,
   tujuan: String,
   sasaran: String,
+
+  jenisProgram: String,
+  predikatAkreditasiPs: String,
+  nomorSK: String,
+  waktuKadaluarsa: Date,
+  namaUnitPengelola: String,
+  namaPerguruanTinggi: String,
+  alamat: {
+    jalan: String,
+    kodepos: String,
+    kota: String,
+    negara: String,
+  },
+  noHp: String,
+  website: String,
+  ts: String,
+  namaPengusul: String,
+  waktuPengusulan: Date,
 });
 
 export default model("User", userSchema);

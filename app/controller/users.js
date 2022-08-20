@@ -6,6 +6,7 @@ import {
 import User from "../models/users.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import moment from "moment";
 
 export const signUp = async (req, res) => {
   try {
@@ -104,7 +105,13 @@ export const getProfile = async (req, res) => {
     const token = req.session.token || req.cookies.token;
     const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
     if (!data) return res.status(400).json(errorWithMessage("Token Invalid"));
-    const user = await User.findById(data._id);
+    let user = await User.findById(data._id);
+    if (user.waktuKadaluarsa) {
+      user.waktuKadaluarsa = moment(user.waktuKadaluarsa).format("yyyy-MM-DD");
+    }
+    if (user.waktuPengusulan) {
+      user.waktuPengusulan = moment(user.waktuPengusulan).format("yyyy-MM-DD");
+    }
     res.json(successWithData(user));
   } catch (error) {
     console.log(error);
@@ -118,6 +125,18 @@ export const editProfile = async (req, res) => {
       return res
         .status(401)
         .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
+
+    if (req.body.password) {
+      req.body.password = bcrypt.hashSync(req.body.password, 10);
+    } else {
+      req.body.password = undefined;
+    }
+    if (!req.body.waktuKadaluarsa) {
+      req.body.waktuKadaluarsa = undefined;
+    }
+    if (!req.body.waktuPengusulan) {
+      req.body.waktuPengusulan = undefined;
+    }
 
     const token = req.session.token || req.cookies.token;
     const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
