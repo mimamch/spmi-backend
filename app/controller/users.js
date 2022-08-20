@@ -15,11 +15,22 @@ export const signUp = async (req, res) => {
       fullName,
       email,
       password: bcrypt.hashSync(password, 10),
+      role: req.body.role,
     });
     const saved = await user.save();
     saved.password = undefined;
     res.json(successWithData(saved));
   } catch (error) {
+    if (error.code === 11000 || error.code === 11001) {
+      const dup = error.message
+        .split(" ")
+        .map((el, key, array) => el.includes("index:") && array[key + 1])
+        .filter(Boolean)[0]
+        .replace(/\_\d+/g, "");
+      return res
+        .status(409)
+        .json({ status: false, message: `${dup} Sudah Terdaftar` });
+    }
     res.status(500).json(errorWithMessage(error.message));
   }
 };
@@ -120,6 +131,30 @@ export const editProfile = async (req, res) => {
     );
 
     res.json(successWithData(edit));
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(errorWithMessage(error.message));
+  }
+};
+
+export const getAllUser = async (req, res) => {
+  try {
+    if (req.user.role != "admin")
+      return res
+        .status(403)
+        .json(errorWithMessage("Anda Tidak Memiliki Akses!"));
+    const users = await User.find();
+    res.json(successWithData(users));
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(errorWithMessage(error.message));
+  }
+};
+
+export const deleteUser = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.json(successWithMessage("Berhasil Menghapus User"));
   } catch (error) {
     console.log(error);
     res.status(500).json(errorWithMessage(error.message));

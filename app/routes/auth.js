@@ -1,5 +1,7 @@
 import {
+  deleteUser,
   editProfile,
+  getAllUser,
   getProfile,
   logOut,
   Me,
@@ -7,6 +9,7 @@ import {
   signUp,
 } from "../controller/users.js";
 import { Router } from "express";
+import isLogin from "../middleware/isLogin.js";
 
 var router = Router();
 
@@ -16,5 +19,7 @@ router.use("/log-out", logOut);
 router.use("/me", Me);
 router.post("/edit-profile", editProfile);
 router.get("/get-profile", getProfile);
+router.get("/get-all-users", isLogin, getAllUser);
+router.delete("/user/:id", isLogin, deleteUser);
 
 export default router;
