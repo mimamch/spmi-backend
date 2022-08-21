@@ -30,6 +30,7 @@ const sub1bag2Schema = new Schema(
     manfaat: String,
     waktuDanDurasi: String,
     buktiKerjasama: String,
+    tahunBerakhir: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
   },
