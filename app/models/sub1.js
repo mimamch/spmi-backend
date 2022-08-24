@@ -13,6 +13,7 @@ const sub1bag1Schema = new Schema(
     tahunBerakhir: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
@@ -33,6 +34,7 @@ const sub1bag2Schema = new Schema(
     tahunBerakhir: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
@@ -53,6 +55,7 @@ const sub1bag3Schema = new Schema(
     tahunBerakhir: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,

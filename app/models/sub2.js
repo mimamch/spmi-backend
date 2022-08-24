@@ -20,6 +20,7 @@ const sub2bag1Schema = new Schema(
     },
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
@@ -35,6 +36,7 @@ const sub2bag1Schema = new Schema(
 //     jumlahMahasiswaAktif: mongoose.Mixed,
 //     user: { type: mongoose.ObjectId, ref: "User" },
 //     isAccepted: String,
+// komentar: String,
 //   },
 //   {
 //     timestamps: true,
@@ -64,6 +66,7 @@ const sub2bag2Schema = new Schema(
     },
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,

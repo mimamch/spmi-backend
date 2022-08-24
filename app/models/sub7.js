@@ -10,6 +10,7 @@ const Sub7Schema = new Schema(
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,

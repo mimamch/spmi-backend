@@ -10,6 +10,7 @@ const Sub6ASchema = new Schema(
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
@@ -27,6 +28,7 @@ const Sub6BSchema = new Schema(
     tahun: Number,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,

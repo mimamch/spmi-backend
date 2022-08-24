@@ -23,6 +23,7 @@ const Sub5ASchema = new Schema(
     unitPenyelenggara: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
@@ -40,6 +41,7 @@ const Sub5BSchema = new Schema(
     tahun: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
@@ -60,6 +62,7 @@ const Sub5CSchema = new Schema(
     rencanaTindakLanjut: String,
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
+    komentar: String,
   },
   {
     timestamps: true,
