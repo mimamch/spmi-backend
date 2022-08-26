@@ -30,6 +30,7 @@ store.on("error", function (error) {
 
 // Routes
 import indexRouter from "./app/routes/index.js";
+import grafikRouter from "./app/routes/grafik/index.js";
 
 export var app = express();
 // view engine setup
@@ -37,8 +38,8 @@ app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "ejs");
 
 var whitelist = [
-  "http://192.168.4.109:3000",
-  "http://192.168.4.109",
+  "http://192.168.5.9:3000",
+  "http://192.168.5.9",
   "http://localhost:3000",
   "http://192.168.31.35:3000",
 ];
@@ -58,6 +59,7 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -73,10 +75,12 @@ app.use(
     },
   })
 );
+
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
+app.use("/grafik", grafikRouter);
 // app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
