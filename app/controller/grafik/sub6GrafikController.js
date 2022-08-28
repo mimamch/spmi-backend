@@ -28,10 +28,6 @@ export const bagianA = async (req, res) => {
           ? pengirim[e.user.fullName]++
           : (pengirim[e.user.fullName] = 1);
       }
-
-      bobot.kuliah += e.bobot.kuliah;
-      bobot.seminar += e.bobot.seminar;
-      bobot.praktikum += e.bobot.praktikum;
     });
 
     let finalData = {
@@ -71,10 +67,6 @@ export const bagianB = async (req, res) => {
           ? pengirim[e.user.fullName]++
           : (pengirim[e.user.fullName] = 1);
       }
-
-      bobot.kuliah += e.bobot.kuliah;
-      bobot.seminar += e.bobot.seminar;
-      bobot.praktikum += e.bobot.praktikum;
     });
 
     let finalData = {

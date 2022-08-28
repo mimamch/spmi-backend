@@ -326,8 +326,6 @@ export const bagianB2 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -336,10 +334,10 @@ export const bagianB2 = async (req, res) => {
         : e.isAccepted == "declined"
         ? statusVerifikasi.declined++
         : statusVerifikasi.notVerified++;
+      jumlahJudulPenelitian.TS2 += e.jumlahJudulPenelitian.TS2;
+      jumlahJudulPenelitian.TS1 += e.jumlahJudulPenelitian.TS1;
+      jumlahJudulPenelitian.TS += e.jumlahJudulPenelitian.TS;
     });
-    jumlahJudulPenelitian.TS2 += e.jumlahJudulPenelitian.TS2;
-    jumlahJudulPenelitian.TS1 += e.jumlahJudulPenelitian.TS1;
-    jumlahJudulPenelitian.TS += e.jumlahJudulPenelitian.TS;
 
     let finalData = {
       jumlahJudulPenelitian,
@@ -374,8 +372,6 @@ export const bagianB3 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -384,10 +380,10 @@ export const bagianB3 = async (req, res) => {
         : e.isAccepted == "declined"
         ? statusVerifikasi.declined++
         : statusVerifikasi.notVerified++;
+      jumlahJudulPKM.TS2 += e.jumlahJudulPKM.TS2;
+      jumlahJudulPKM.TS1 += e.jumlahJudulPKM.TS1;
+      jumlahJudulPKM.TS += e.jumlahJudulPKM.TS;
     });
-    jumlahJudulPKM.TS2 += e.jumlahJudulPKM.TS2;
-    jumlahJudulPKM.TS1 += e.jumlahJudulPKM.TS1;
-    jumlahJudulPKM.TS += e.jumlahJudulPKM.TS;
 
     let finalData = {
       jumlahJudulPKM,
@@ -422,8 +418,6 @@ export const bagianB41 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -432,10 +426,10 @@ export const bagianB41 = async (req, res) => {
         : e.isAccepted == "declined"
         ? statusVerifikasi.declined++
         : statusVerifikasi.notVerified++;
+      jumlahJudul.TS2 += e.jumlahJudul.TS2;
+      jumlahJudul.TS1 += e.jumlahJudul.TS1;
+      jumlahJudul.TS += e.jumlahJudul.TS;
     });
-    jumlahJudul.TS2 += e.jumlahJudul.TS2;
-    jumlahJudul.TS1 += e.jumlahJudul.TS1;
-    jumlahJudul.TS += e.jumlahJudul.TS;
 
     let finalData = {
       jumlahJudul,
@@ -470,8 +464,6 @@ export const bagianB42 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -480,10 +472,10 @@ export const bagianB42 = async (req, res) => {
         : e.isAccepted == "declined"
         ? statusVerifikasi.declined++
         : statusVerifikasi.notVerified++;
+      jumlahJudul.TS2 += e.jumlahJudul.TS2;
+      jumlahJudul.TS1 += e.jumlahJudul.TS1;
+      jumlahJudul.TS += e.jumlahJudul.TS;
     });
-    jumlahJudul.TS2 += e.jumlahJudul.TS2;
-    jumlahJudul.TS1 += e.jumlahJudul.TS1;
-    jumlahJudul.TS += e.jumlahJudul.TS;
 
     let finalData = {
       jumlahJudul,
@@ -518,8 +510,6 @@ export const bagianB5 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -566,8 +556,6 @@ export const bagianB6 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -614,8 +602,6 @@ export const bagianB71 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -662,8 +648,6 @@ export const bagianB72 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -710,8 +694,6 @@ export const bagianB73 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
@@ -758,8 +740,6 @@ export const bagianB74 = async (req, res) => {
       notVerified: 0,
     };
     data.map((e, i) => {
-      tingkat[e.tingkat] ? tingkat[e.tingkat]++ : (tingkat[e.tingkat] = 1);
-
       userCount[e.user.fullName]
         ? userCount[e.user.fullName]++
         : (userCount[e.user.fullName] = 1);
