@@ -70,8 +70,9 @@ app.use(
     secret: "iloveyou3000",
     resave: true,
     cookie: {
-      // sameSite: "none",
+      sameSite: "none",
       secure: "auto",
+      httpOnly: true,
     },
   })
 );

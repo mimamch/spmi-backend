@@ -57,7 +57,7 @@ export const signIn = async (req, res) => {
     };
     const token = jwt.sign(user, process.env.JWT_SECRET_KEY);
     res.cookie("token", token, {
-      httpOnly: true,
+      // httpOnly: true,
       maxAge: 30 * 24 * 60 * 60 * 1000,
     });
     req.session.token = token;
@@ -80,13 +80,19 @@ export const logOut = async (req, res) => {
 
 export const Me = async (req, res) => {
   try {
-    if (!req.session.token && !req.cookies.token)
+    if (!req.session.token && !req.cookies.token && !req.headers.token)
       return res
         .status(401)
         .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
 
-    const token = req.session.token || req.cookies.token;
-    const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const token = req.session.token || req.cookies.token || req.headers.token;
+    let data;
+    try {
+      data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    } catch (error) {
+      return res.status(401).json(errorWithMessage("Token Invalid"));
+    }
+
     if (!data) return res.status(400).json(errorWithMessage("Token Invalid"));
     res.json(successWithData(data));
   } catch (error) {
@@ -97,13 +103,18 @@ export const Me = async (req, res) => {
 
 export const getProfile = async (req, res) => {
   try {
-    if (!req.session.token && !req.cookies.token)
+    if (!req.session.token && !req.cookies.token && !req.headers.token)
       return res
         .status(401)
         .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
 
-    const token = req.session.token || req.cookies.token;
-    const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const token = req.session.token || req.cookies.token || req.headers.token;
+    let data;
+    try {
+      data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    } catch (error) {
+      return res.status(401).json(errorWithMessage("Token Invalid"));
+    }
     if (!data) return res.status(400).json(errorWithMessage("Token Invalid"));
     let user = await User.findById(data._id);
     if (user.waktuKadaluarsa) {
@@ -121,7 +132,7 @@ export const getProfile = async (req, res) => {
 
 export const editProfile = async (req, res) => {
   try {
-    if (!req.session.token && !req.cookies.token)
+    if (!req.session.token && !req.cookies.token && !req.headers.token)
       return res
         .status(401)
         .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
@@ -138,8 +149,13 @@ export const editProfile = async (req, res) => {
       req.body.waktuPengusulan = undefined;
     }
 
-    const token = req.session.token || req.cookies.token;
-    const data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const token = req.session.token || req.cookies.token || req.headers.token;
+    let data;
+    try {
+      data = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    } catch (error) {
+      return res.status(401).json(errorWithMessage("Token Invalid"));
+    }
     if (!data) return res.status(400).json(errorWithMessage("Token Invalid"));
     const edit = await User.findByIdAndUpdate(
       data._id,
