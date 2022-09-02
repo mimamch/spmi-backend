@@ -137,6 +137,8 @@ export const editProfile = async (req, res) => {
         .status(401)
         .json(errorWithMessage("Silahkan Login Telebih Dahulu"));
 
+    const token = req.session.token || req.cookies.token || req.headers.token;
+
     if (req.body.password) {
       req.body.password = bcrypt.hashSync(req.body.password, 10);
     } else {
@@ -149,7 +151,6 @@ export const editProfile = async (req, res) => {
       req.body.waktuPengusulan = undefined;
     }
 
-    const token = req.session.token || req.cookies.token || req.headers.token;
     let data;
     try {
       data = jwt.verify(token, process.env.JWT_SECRET_KEY);
@@ -157,10 +158,25 @@ export const editProfile = async (req, res) => {
       return res.status(401).json(errorWithMessage("Token Invalid"));
     }
     if (!data) return res.status(400).json(errorWithMessage("Token Invalid"));
+    let visi = req.body.visi;
+    let misi = req.body.misi;
+    let tujuan = req.body.tujuan;
+    let sasaran = req.body.sasaran;
+
+    delete req.body.visi;
+    delete req.body.misi;
+    delete req.body.tujuan;
+    delete req.body.sasaran;
     const edit = await User.findByIdAndUpdate(
       data._id,
       {
         ...req.body,
+        $push: {
+          visi: visi,
+          misi: misi,
+          tujuan: tujuan,
+          sasaran: sasaran,
+        },
       },
       { new: true }
     );
