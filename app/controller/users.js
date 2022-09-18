@@ -162,6 +162,7 @@ export const editProfile = async (req, res) => {
     let misi = req.body.misi;
     let tujuan = req.body.tujuan;
     let sasaran = req.body.sasaran;
+    let createdAt = req.body.createdAt || new Date();
 
     delete req.body.visi;
     delete req.body.misi;
@@ -172,10 +173,10 @@ export const editProfile = async (req, res) => {
       {
         ...req.body,
         $push: {
-          visi: visi,
-          misi: misi,
-          tujuan: tujuan,
-          sasaran: sasaran,
+          ...(visi && { visi: { data: visi, createdAt } }),
+          ...(misi && { misi: { data: misi, createdAt } }),
+          ...(tujuan && { tujuan: { data: tujuan, createdAt } }),
+          ...(sasaran && { sasaran: { data: sasaran, createdAt } }),
         },
       },
       { new: true }

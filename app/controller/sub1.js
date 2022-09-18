@@ -1,6 +1,6 @@
 import { Sub1Bag1, Sub1Bag2, Sub1Bag3 } from "../models/sub1.js";
 import { errorWithMessage, successWithData } from "../../lib/response.js";
-
+import { publicPath } from "../../lib/path.js";
 export const bag1 = {
   show: async (req, res) => {
     try {
@@ -24,9 +24,12 @@ export const bag1 = {
     }
   },
   create: async (req, res) => {
+    // console.log(req.body);
+    // return;
     try {
-      console.log(req.user);
+      // console.log(req.user);
       const save = new Sub1Bag1({
+        ...req.body,
         lembagaMitra: req.body.lembagaMitra,
         tingkat: req.body.tingkat,
         judulKegiatan: req.body.judulKegiatan,
@@ -95,6 +98,7 @@ export const bag2 = {
   create: async (req, res) => {
     try {
       const save = new Sub1Bag2({
+        ...req.body,
         lembagaMitra: req.body.lembagaMitra,
         tingkat: req.body.tingkat,
         judulKegiatan: req.body.judulKegiatan,
@@ -162,7 +166,9 @@ export const bag3 = {
   },
   create: async (req, res) => {
     try {
+      console.log(req.body);
       const save = new Sub1Bag3({
+        ...req.body,
         lembagaMitra: req.body.lembagaMitra,
         tingkat: req.body.tingkat,
         judulKegiatan: req.body.judulKegiatan,

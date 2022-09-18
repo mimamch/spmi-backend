@@ -14,6 +14,7 @@ import logger from "morgan";
 import http from "http";
 import { config } from "dotenv";
 import cors from "cors";
+import fileUpload from "express-fileupload";
 config();
 
 import mongoose from "mongoose";
@@ -36,7 +37,7 @@ export var app = express();
 // view engine setup
 app.set("views", path.join(__dirname, "/app/views"));
 app.set("view engine", "ejs");
-
+app.use(fileUpload());
 var whitelist = [
   "http://192.168.5.9:3000",
   "http://192.168.5.9",

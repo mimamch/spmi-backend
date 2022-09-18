@@ -13,6 +13,7 @@ const Sub8ASchema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -30,6 +31,7 @@ const Sub8B1Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -47,6 +49,7 @@ const Sub8B2Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -73,6 +76,7 @@ const Sub8CSchema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -94,6 +98,7 @@ const Sub8D1Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -115,6 +120,7 @@ const Sub8D2Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -136,6 +142,7 @@ const Sub8E1Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -152,6 +159,7 @@ const Sub8E2refSchema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -173,6 +181,7 @@ const Sub8E2Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -192,6 +201,7 @@ const Sub8F11Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -222,6 +232,7 @@ const Sub8F12Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -249,6 +260,7 @@ const Sub8F2Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -267,6 +279,7 @@ const Sub8F3Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -283,6 +296,7 @@ const Sub8F41Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -299,6 +313,7 @@ const Sub8F42Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -315,6 +330,7 @@ const Sub8F43Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -331,6 +347,7 @@ const Sub8F44Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,

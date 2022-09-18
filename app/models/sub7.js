@@ -11,6 +11,7 @@ const Sub7Schema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,

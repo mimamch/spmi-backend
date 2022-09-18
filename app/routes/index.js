@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { successWithMessage } from "../../lib/response.js";
+import { publicPath } from "../../lib/path.js";
+import { errorWithMessage, successWithMessage } from "../../lib/response.js";
 import isLogin from "../middleware/isLogin.js";
 import authRouter from "./auth.js";
 import sub1Router from "./sub1.js";
@@ -18,6 +19,23 @@ router.get("/", function (req, res, next) {
 });
 
 router.use("/auth", authRouter);
+
+router.use((req, res, next) => {
+  console.log(req.files);
+  if (req.files?.file) {
+    const fileName = new Date().getTime() + req.files.file.name;
+    req.body.file = fileName;
+    // console.log(publicPath + fileName);
+    req.files.file.mv(publicPath + fileName, (error) => {
+      if (error) {
+        return res
+          .status(500)
+          .json(errorWithMessage("Error when uploading file"));
+      }
+    });
+  }
+  next();
+});
 
 router.use("/sub1", isLogin, sub1Router);
 router.use("/sub2", isLogin, sub2Router);

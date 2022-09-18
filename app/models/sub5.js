@@ -24,6 +24,7 @@ const Sub5ASchema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -42,6 +43,7 @@ const Sub5BSchema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
@@ -63,6 +65,7 @@ const Sub5CSchema = new Schema(
     user: { type: mongoose.ObjectId, ref: "User" },
     isAccepted: String,
     komentar: String,
+    file: String,
   },
   {
     timestamps: true,
