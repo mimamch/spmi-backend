@@ -7,9 +7,9 @@ export const sub6A = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub6A.find({ user: req.user.id }).populate("user");
+          data = await Sub6A.find({ user: req.user.id });
         } else {
-          data = await Sub6A.findById(req.params.id).populate("user");
+          data = await Sub6A.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -66,9 +66,9 @@ export const sub6B = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub6B.find({ user: req.user.id }).populate("user");
+          data = await Sub6B.find({ user: req.user.id });
         } else {
-          data = await Sub6B.findById(req.params.id).populate("user");
+          data = await Sub6B.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {

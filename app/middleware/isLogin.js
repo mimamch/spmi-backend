@@ -20,7 +20,9 @@ const isLogin = async (req, res, next) => {
       return res
         .status(400)
         .json(errorWithMessage("Akses Ditolak, Mohon Login Telebih Dahulu"));
-    const user = await User.findById(decode._id);
+    const user = await User.findById(decode._id).select(
+      "-visi -misi -tujuan -sasaran"
+    );
     if (!user)
       return res
         .status(400)

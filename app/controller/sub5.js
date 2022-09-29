@@ -7,9 +7,9 @@ export const bag5A = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub5A.find({ user: req.user.id }).populate("user");
+          data = await Sub5A.find({ user: req.user.id });
         } else {
-          data = await Sub5A.findById(req.params.id).populate("user");
+          data = await Sub5A.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -66,9 +66,9 @@ export const bag5B = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub5B.find({ user: req.user.id }).populate("user");
+          data = await Sub5B.find({ user: req.user.id });
         } else {
-          data = await Sub5B.findById(req.params.id).populate("user");
+          data = await Sub5B.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -125,9 +125,9 @@ export const bag5C = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub5C.find({ user: req.user.id }).populate("user");
+          data = await Sub5C.find({ user: req.user.id });
         } else {
-          data = await Sub5C.findById(req.params.id).populate("user");
+          data = await Sub5C.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {

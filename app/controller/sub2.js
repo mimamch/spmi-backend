@@ -7,9 +7,9 @@ export const bag1 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub2Bag1.find({ user: req.user.id }).populate("user");
+          data = await Sub2Bag1.find({ user: req.user.id });
         } else {
-          data = await Sub2Bag1.findById(req.params.id).populate("user");
+          data = await Sub2Bag1.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -69,9 +69,9 @@ export const bag2 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub2Bag2.find({ user: req.user.id }).populate("user");
+          data = await Sub2Bag2.find({ user: req.user.id });
         } else {
-          data = await Sub2Bag2.findById(req.params.id).populate("user");
+          data = await Sub2Bag2.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {

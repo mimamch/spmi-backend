@@ -7,9 +7,9 @@ export const sub7 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub7.find({ user: req.user.id }).populate("user");
+          data = await Sub7.find({ user: req.user.id });
         } else {
-          data = await Sub7.findById(req.params.id).populate("user");
+          data = await Sub7.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {

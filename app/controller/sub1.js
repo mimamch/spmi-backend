@@ -7,15 +7,15 @@ export const bag1 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub1Bag1.find({ user: req.user.id }).populate("user");
+          data = await Sub1Bag1.find({ user: req.user.id });
         } else {
-          data = await Sub1Bag1.findById(req.params.id).populate("user");
+          data = await Sub1Bag1.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
           data = await Sub1Bag1.find().populate("user");
         } else {
-          data = await Sub1Bag1.findById(req.params.id).populate("user");
+          data = await Sub1Bag1.findById(req.params.id);
         }
       }
       res.json(successWithData(data));
@@ -58,6 +58,7 @@ export const bag1 = {
         return res.status(404).json(errorWithMessage("Data Tidak Ditemukan!"));
       res.json(successWithData(data));
     } catch (error) {
+      console.log(error);
       res.status(500).json(errorWithMessage(error.message));
     }
   },
@@ -79,9 +80,9 @@ export const bag2 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub1Bag2.find({ user: req.user.id }).populate("user");
+          data = await Sub1Bag2.find({ user: req.user.id });
         } else {
-          data = await Sub1Bag2.findById(req.params.id).populate("user");
+          data = await Sub1Bag2.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -148,15 +149,15 @@ export const bag3 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub1Bag3.find({ user: req.user.id }).populate("user");
+          data = await Sub1Bag3.find({ user: req.user.id });
         } else {
-          data = await Sub1Bag3.findById(req.params.id).populate("user");
+          data = await Sub1Bag3.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
           data = await Sub1Bag3.find().populate("user");
         } else {
-          data = await Sub1Bag3.findById(req.params.id).populate("user");
+          data = await Sub1Bag3.findById(req.params.id);
         }
       }
       res.json(successWithData(data));
@@ -166,7 +167,7 @@ export const bag3 = {
   },
   create: async (req, res) => {
     try {
-      console.log(req.body);
+      // console.log(req.body);
       const save = new Sub1Bag3({
         ...req.body,
         lembagaMitra: req.body.lembagaMitra,

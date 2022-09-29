@@ -24,9 +24,9 @@ export const bagA1 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagA1.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagA1.find({ user: req.user.id });
         } else {
-          data = await Sub3BagA1.findById(req.params.id).populate("user");
+          data = await Sub3BagA1.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -86,9 +86,9 @@ export const bagA2 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagA2.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagA2.find({ user: req.user.id });
         } else {
-          data = await Sub3BagA2.findById(req.params.id).populate("user");
+          data = await Sub3BagA2.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -148,9 +148,9 @@ export const bagA3 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagA3.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagA3.find({ user: req.user.id });
         } else {
-          data = await Sub3BagA3.findById(req.params.id).populate("user");
+          data = await Sub3BagA3.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -210,9 +210,9 @@ export const bagA4 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagA4.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagA4.find({ user: req.user.id });
         } else {
-          data = await Sub3BagA4.findById(req.params.id).populate("user");
+          data = await Sub3BagA4.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -272,9 +272,9 @@ export const bagA5 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagA5.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagA5.find({ user: req.user.id });
         } else {
-          data = await Sub3BagA5.findById(req.params.id).populate("user");
+          data = await Sub3BagA5.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -334,9 +334,9 @@ export const bagB1 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB1.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB1.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB1.findById(req.params.id).populate("user");
+          data = await Sub3BagB1.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -396,9 +396,9 @@ export const bagB2 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB2.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB2.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB2.findById(req.params.id).populate("user");
+          data = await Sub3BagB2.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -459,9 +459,9 @@ export const bagB3 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB3.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB3.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB3.findById(req.params.id).populate("user");
+          data = await Sub3BagB3.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -522,9 +522,9 @@ export const bagB41 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB41.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB41.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB41.findById(req.params.id).populate("user");
+          data = await Sub3BagB41.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -585,9 +585,9 @@ export const bagB42 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB42.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB42.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB42.findById(req.params.id).populate("user");
+          data = await Sub3BagB42.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -648,9 +648,9 @@ export const bagB5 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB5.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB5.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB5.findById(req.params.id).populate("user");
+          data = await Sub3BagB5.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -711,9 +711,9 @@ export const bagB6 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB6.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB6.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB6.findById(req.params.id).populate("user");
+          data = await Sub3BagB6.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -774,9 +774,9 @@ export const bagB71 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB71.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB71.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB71.findById(req.params.id).populate("user");
+          data = await Sub3BagB71.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -837,9 +837,9 @@ export const bagB72 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB72.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB72.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB72.findById(req.params.id).populate("user");
+          data = await Sub3BagB72.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -900,9 +900,9 @@ export const bagB73 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB73.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB73.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB73.findById(req.params.id).populate("user");
+          data = await Sub3BagB73.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {
@@ -963,9 +963,9 @@ export const bagB74 = {
       let data = [];
       if (req.user.role == "prodi") {
         if (!req.params.id) {
-          data = await Sub3BagB74.find({ user: req.user.id }).populate("user");
+          data = await Sub3BagB74.find({ user: req.user.id });
         } else {
-          data = await Sub3BagB74.findById(req.params.id).populate("user");
+          data = await Sub3BagB74.findById(req.params.id);
         }
       } else {
         if (!req.params.id) {

@@ -21,7 +21,7 @@ router.get("/", function (req, res, next) {
 router.use("/auth", authRouter);
 
 router.use((req, res, next) => {
-  console.log(req.files);
+  // console.log(req.files);
   if (req.files?.file) {
     const fileName = new Date().getTime() + req.files.file.name;
     req.body.file = fileName;
